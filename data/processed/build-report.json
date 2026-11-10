@@ -1,0 +1,534 @@
+{
+ "generatedAt": "2026-11-10T15:56:20.161Z",
+ "stats": {
+  "buildings": 927,
+  "tierA": 12,
+  "tierB": 44,
+  "tierC": 871,
+  "officialBuildings": 59,
+  "officialMatched": 58,
+  "geomVerified": 47,
+  "geomInferred": 9,
+  "geomApproximate": 871,
+  "features": 1117,
+  "trees": 20526,
+  "props": 2392,
+  "structureQuads": 397587,
+  "maxTerrainM": 397,
+  "roadWays": 566,
+  "pathWays": 1120,
+  "bridgeWays": 150
+ },
+ "officialMatches": [
+  {
+   "code": "CYA",
+   "name": "Chong Yuet Ming Amenities Centre",
+   "method": "official-name",
+   "osm": "way/182203652",
+   "distM": 1
+  },
+  {
+   "code": "HH",
+   "name": "Hung Hing Ying Building",
+   "method": "official-name",
+   "osm": "way/181773526",
+   "distM": 10
+  },
+  {
+   "code": "CYC",
+   "name": "Chong Yuet Ming Chemistry Building",
+   "method": "official-name",
+   "osm": "way/182208619",
+   "distM": 1
+  },
+  {
+   "code": "JL",
+   "name": "James Hsioung Lee Science Building",
+   "method": "official-name",
+   "osm": "way/182203625",
+   "distM": 1
+  },
+  {
+   "code": "SLH",
+   "name": "Simon K.Y. Lee Hall",
+   "method": "official-name",
+   "osm": "way/182172768",
+   "distM": 0
+  },
+  {
+   "code": "CYP",
+   "name": "Chong Yuet Ming Physics Building",
+   "method": "official-name",
+   "osm": "way/182208628",
+   "distM": 0
+  },
+  {
+   "code": "KK",
+   "name": "K.K. Leung Building",
+   "method": "official-name",
+   "osm": "way/182023173",
+   "distM": 1
+  },
+  {
+   "code": "KBS",
+   "name": "Kadoorie Biological Sciences Building",
+   "method": "official-name",
+   "osm": "way/182024491",
+   "distM": 0
+  },
+  {
+   "code": "CB",
+   "name": "Chow Yei Ching Building",
+   "method": "official-name",
+   "osm": "way/182172764",
+   "distM": 1
+  },
+  {
+   "code": "KB",
+   "name": "Knowles Building",
+   "method": "official-name",
+   "osm": "way/182023171",
+   "distM": 1
+  },
+  {
+   "code": "COB",
+   "name": "Composite Building",
+   "method": "official-name",
+   "osm": "way/182172765",
+   "distM": 1
+  },
+  {
+   "code": "TT",
+   "name": "T.T. Tsui Building",
+   "method": "official-name",
+   "osm": "way/182208630",
+   "distM": 0
+  },
+  {
+   "code": "LBO",
+   "name": "Library Building (Old Wing)",
+   "method": "official-name",
+   "osm": "way/182023175",
+   "distM": 0
+  },
+  {
+   "code": "TC",
+   "name": "Tang Chi Ngong Building",
+   "method": "official-name",
+   "osm": "way/182208641",
+   "distM": 0
+  },
+  {
+   "code": "EH",
+   "name": "Eliot Hall",
+   "method": "official-name",
+   "osm": "way/182208614",
+   "distM": 0
+  },
+  {
+   "code": "MB",
+   "name": "Main Building",
+   "method": "official-name",
+   "osm": "relation/2424275",
+   "distM": 0
+  },
+  {
+   "code": "MH",
+   "name": "May Hall",
+   "method": "official-name",
+   "osm": "way/182208617",
+   "distM": 2
+  },
+  {
+   "code": "FP",
+   "name": "Fung Ping Shan Building",
+   "method": "official-name",
+   "osm": "way/182208644",
+   "distM": 0
+  },
+  {
+   "code": "MW",
+   "name": "Meng Wah Complex",
+   "method": "official-name",
+   "osm": "way/390554535",
+   "distM": 0
+  },
+  {
+   "code": "UL",
+   "name": "University Lodge",
+   "method": "official-name",
+   "osm": "way/390554537",
+   "distM": 0
+  },
+  {
+   "code": "GH",
+   "name": "Graduate House",
+   "method": "official-name",
+   "osm": "way/182203620",
+   "distM": 0
+  },
+  {
+   "code": "PS",
+   "name": "Pao Siu Loong Building",
+   "method": "official-name",
+   "osm": "way/181773515",
+   "distM": 1
+  },
+  {
+   "code": "HW",
+   "name": "Haking Wong Building",
+   "method": "official-name",
+   "osm": "way/182172769",
+   "distM": 0
+  },
+  {
+   "code": "RH",
+   "name": "Rayson Huang Theatre",
+   "method": "official-name",
+   "osm": "way/182203643",
+   "distM": 0
+  },
+  {
+   "code": "RBC",
+   "name": "Robert Black College",
+   "method": "official-name",
+   "osm": "way/182203645",
+   "distM": 0
+  },
+  {
+   "code": "RR",
+   "name": "Run Run Shaw Building",
+   "method": "official-name",
+   "osm": "way/182203618",
+   "distM": 0
+  },
+  {
+   "code": "HC",
+   "name": "Hui Oi Chow Science Building",
+   "method": "official-name",
+   "osm": "way/182203649",
+   "distM": 0
+  },
+  {
+   "code": "RM",
+   "name": "Runme Shaw Building",
+   "method": "official-name",
+   "osm": "way/182203609",
+   "distM": 1
+  },
+  {
+   "code": "YP",
+   "name": "Yam Pak Building",
+   "method": "official-name",
+   "osm": "way/182213417",
+   "distM": 0
+  },
+  {
+   "code": "HT",
+   "name": "Ho Tim Hall",
+   "method": "official-name",
+   "osm": "way/192898437",
+   "distM": 0
+  },
+  {
+   "code": "KTC",
+   "name": "Kennedy Town Centre",
+   "method": "official-name",
+   "osm": "way/320984104",
+   "distM": 0
+  },
+  {
+   "code": "LHT",
+   "name": "Lady Ho Tung Hall",
+   "method": "official-name",
+   "osm": "way/192898432",
+   "distM": 1
+  },
+  {
+   "code": "LSK",
+   "name": "Lee Shau Kee Hall",
+   "method": "official-name",
+   "osm": "way/182329536",
+   "distM": 0
+  },
+  {
+   "code": "MOH",
+   "name": "Morrison Hall",
+   "method": "official-name",
+   "osm": "way/182329540",
+   "distM": 0
+  },
+  {
+   "code": "RIH",
+   "name": "Ricci Hall",
+   "method": "official-name",
+   "osm": "way/192898431",
+   "distM": 1
+  },
+  {
+   "code": "STH",
+   "name": "Starr Hall",
+   "method": "official-name",
+   "osm": "way/192898434",
+   "distM": 0
+  },
+  {
+   "code": "SCS",
+   "name": "Suen Chi Sun Hall",
+   "method": "official-name",
+   "osm": "way/182329521",
+   "distM": 1
+  },
+  {
+   "code": "",
+   "name": "The Jockey Club Tower",
+   "method": "official-name",
+   "osm": "way/315571039",
+   "distM": 0
+  },
+  {
+   "code": "",
+   "name": "Run Run Shaw Tower",
+   "method": "official-name",
+   "osm": "way/315571046",
+   "distM": 0
+  },
+  {
+   "code": "",
+   "name": "Run Run Shaw Heritage House",
+   "method": "official-name",
+   "osm": "way/182298784",
+   "distM": 8
+  },
+  {
+   "code": "",
+   "name": "Cheng Yu Tung Tower",
+   "method": "official-name",
+   "osm": "way/315571042",
+   "distM": 0
+  },
+  {
+   "code": "",
+   "name": "The University of Hong Kong Visitor Centre",
+   "method": "official-name",
+   "osm": "way/182298778",
+   "distM": 3
+  },
+  {
+   "code": "",
+   "name": "Wong Chuang Lai Wah Building",
+   "method": "official-name",
+   "osm": "way/390554534",
+   "distM": 1
+  },
+  {
+   "code": "",
+   "name": "Wong Chue Meng Building",
+   "method": "official-name",
+   "osm": "way/390554536",
+   "distM": 0
+  },
+  {
+   "code": "",
+   "name": "Jockey Club Student Village III",
+   "method": "official-name",
+   "osm": "way/290696418",
+   "distM": 0
+  },
+  {
+   "code": "SWH",
+   "name": "Swire Hall",
+   "method": "official-location",
+   "osm": "way/182208638",
+   "distM": 0
+  },
+  {
+   "code": "LBN",
+   "name": "Library Building (New Wing)",
+   "method": "official-location",
+   "osm": "way/182023179",
+   "distM": 0
+  },
+  {
+   "code": "XLYH",
+   "name": "Loke Yew Hall",
+   "method": "official-location",
+   "osm": "relation/2424275",
+   "distM": 0
+  },
+  {
+   "code": "UD",
+   "name": "University Drive No. 2",
+   "method": "official-location",
+   "osm": "way/1510172811",
+   "distM": 0
+  },
+  {
+   "code": "FH",
+   "name": "Pokfield Campus (in progress)",
+   "method": "unmatched"
+  },
+  {
+   "code": "FS",
+   "name": "Fong Shu Chuen Amenities Centre",
+   "method": "official-location",
+   "osm": "way/182208638",
+   "distM": 0
+  },
+  {
+   "code": "SJC",
+   "name": "St. John's College",
+   "method": "official-location",
+   "osm": "way/1167867647",
+   "distM": 0
+  },
+  {
+   "code": "",
+   "name": "Yu Chun Keung Tam Shuk Yin Learning Centre",
+   "method": "official-location",
+   "osm": "way/315571039",
+   "distM": 0
+  },
+  {
+   "code": "",
+   "name": "Yu Chun Keung Tam Shuk Yin Lecture Theatre",
+   "method": "official-location",
+   "osm": "way/315571039",
+   "distM": 0
+  },
+  {
+   "code": "",
+   "name": "Lee Shau Kee Lecture Centre",
+   "method": "official-location",
+   "osm": "way/534044190",
+   "distM": 5
+  },
+  {
+   "code": "",
+   "name": "Chi Wah Learning Commons",
+   "method": "official-location",
+   "osm": "way/534044190",
+   "distM": 0
+  },
+  {
+   "code": "",
+   "name": "Lui Che Woo Law Library",
+   "method": "official-location",
+   "osm": "way/315571042",
+   "distM": 0
+  },
+  {
+   "code": "",
+   "name": "The Jockey Club Building",
+   "method": "official-location",
+   "osm": "way/182203620",
+   "distM": 0
+  },
+  {
+   "code": "",
+   "name": "Global Lounge",
+   "method": "official-location",
+   "osm": "way/182208638",
+   "distM": 0
+  }
+ ],
+ "specials": [],
+ "tierA": [
+  {
+   "id": "relation/2424275",
+   "name": "Main Building",
+   "model": "main_building",
+   "base": 60,
+   "heightM": 16,
+   "heightSource": "verified"
+  },
+  {
+   "id": "way/181773526",
+   "name": "Hung Hing Ying Building",
+   "model": "domed_pavilion",
+   "base": 53,
+   "heightM": 11.6,
+   "heightSource": "verified"
+  },
+  {
+   "id": "way/182024491",
+   "name": "Kadoorie Biological Sciences Building",
+   "model": "hightech",
+   "base": 56,
+   "heightM": 59.1,
+   "heightSource": "verified"
+  },
+  {
+   "id": "way/182203645",
+   "name": "Robert Black College",
+   "model": "chinese_court",
+   "base": 105,
+   "heightM": 14.7,
+   "heightSource": "verified"
+  },
+  {
+   "id": "way/182208614",
+   "name": "Eliot Hall",
+   "model": "brick_hall",
+   "base": 111,
+   "heightM": 15.5,
+   "heightSource": "verified"
+  },
+  {
+   "id": "way/182208617",
+   "name": "May Hall",
+   "model": "brick_hall",
+   "base": 117,
+   "heightM": 14.2,
+   "heightSource": "verified"
+  },
+  {
+   "id": "way/182208641",
+   "name": "Tang Chi Ngong Building",
+   "model": "stone_classical",
+   "base": 57,
+   "heightM": 12.9,
+   "heightSource": "verified"
+  },
+  {
+   "id": "way/182208644",
+   "name": "Fung Ping Shan Building",
+   "model": "brick_museum",
+   "base": 56,
+   "heightM": 12.4,
+   "heightSource": "verified"
+  },
+  {
+   "id": "way/182298784",
+   "name": "Run Run Shaw Heritage House",
+   "model": "heritage_house",
+   "base": 95,
+   "heightM": 6.9,
+   "heightSource": "verified"
+  },
+  {
+   "id": "way/315571039",
+   "name": "The Jockey Club Tower",
+   "model": "centennial_tower",
+   "base": 91,
+   "heightM": 38.5,
+   "heightSource": "verified"
+  },
+  {
+   "id": "way/315571042",
+   "name": "Cheng Yu Tung Tower",
+   "model": "centennial_tower",
+   "base": 91,
+   "heightM": 32.3,
+   "heightSource": "verified"
+  },
+  {
+   "id": "way/315571046",
+   "name": "Run Run Shaw Tower",
+   "model": "centennial_tower",
+   "base": 91,
+   "heightM": 33.3,
+   "heightSource": "verified"
+  }
+ ]
+}

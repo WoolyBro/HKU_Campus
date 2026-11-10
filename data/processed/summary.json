@@ -1,0 +1,311 @@
+{
+  "generatedAt": "2026-11-10T14:50:02.876Z",
+  "source": {
+    "file": "data/raw/osm-hku.json",
+    "fetchedAt": "2026-11-10T14:46:27.439Z",
+    "osmBase": "2026-11-10T14:44:38Z",
+    "licence": "ODbL 1.0 — © OpenStreetMap contributors"
+  },
+  "counts": {
+    "buildings": 1088,
+    "roads": 579,
+    "paths": 1098,
+    "stairs": 256,
+    "bridges": 159,
+    "waterways": 35,
+    "vegetation": 108,
+    "facilities": 575,
+    "transport": 107,
+    "terrain-features": 174
+  },
+  "skippedUnclassified": 1806,
+  "flagged": [
+    {
+      "id": "way/758535264",
+      "group": "buildings",
+      "flags": [
+        "tiny-footprint",
+        "no-attributes"
+      ]
+    },
+    {
+      "id": "way/1015253027",
+      "group": "buildings",
+      "flags": [
+        "tiny-footprint"
+      ]
+    },
+    {
+      "id": "way/1510172811",
+      "group": "buildings",
+      "flags": [
+        "under-construction",
+        "no-attributes"
+      ]
+    },
+    {
+      "id": "way/193250998",
+      "group": "paths",
+      "flags": [
+        "degenerate-line"
+      ],
+      "name": "Centre Street"
+    },
+    {
+      "id": "way/193251015",
+      "group": "paths",
+      "flags": [
+        "degenerate-line"
+      ],
+      "name": "Centre Street"
+    },
+    {
+      "id": "way/692419812",
+      "group": "paths",
+      "flags": [
+        "degenerate-line"
+      ]
+    },
+    {
+      "id": "way/692419841",
+      "group": "paths",
+      "flags": [
+        "degenerate-line"
+      ]
+    },
+    {
+      "id": "way/698990281",
+      "group": "paths",
+      "flags": [
+        "degenerate-line"
+      ]
+    },
+    {
+      "id": "way/702067360",
+      "group": "paths",
+      "flags": [
+        "degenerate-line"
+      ]
+    },
+    {
+      "id": "way/702067361",
+      "group": "paths",
+      "flags": [
+        "degenerate-line"
+      ]
+    },
+    {
+      "id": "way/728733453",
+      "group": "paths",
+      "flags": [
+        "degenerate-line"
+      ]
+    },
+    {
+      "id": "way/756201199",
+      "group": "paths",
+      "flags": [
+        "degenerate-line"
+      ]
+    },
+    {
+      "id": "way/832192993",
+      "group": "paths",
+      "flags": [
+        "degenerate-line"
+      ]
+    },
+    {
+      "id": "way/978030709",
+      "group": "bridges",
+      "flags": [
+        "degenerate-line"
+      ]
+    },
+    {
+      "id": "way/1015252937",
+      "group": "paths",
+      "flags": [
+        "degenerate-line"
+      ]
+    },
+    {
+      "id": "way/1015252963",
+      "group": "paths",
+      "flags": [
+        "degenerate-line"
+      ]
+    },
+    {
+      "id": "way/1015252988",
+      "group": "paths",
+      "flags": [
+        "degenerate-line"
+      ]
+    },
+    {
+      "id": "way/1015252992",
+      "group": "paths",
+      "flags": [
+        "degenerate-line"
+      ]
+    },
+    {
+      "id": "way/1015253030",
+      "group": "paths",
+      "flags": [
+        "degenerate-line"
+      ]
+    },
+    {
+      "id": "way/1015253052",
+      "group": "paths",
+      "flags": [
+        "degenerate-line"
+      ],
+      "name": "Centre Street"
+    },
+    {
+      "id": "way/1015253057",
+      "group": "paths",
+      "flags": [
+        "degenerate-line"
+      ],
+      "name": "Centre Street"
+    },
+    {
+      "id": "way/1015253059",
+      "group": "paths",
+      "flags": [
+        "degenerate-line"
+      ],
+      "name": "Centre Street"
+    },
+    {
+      "id": "way/1015253067",
+      "group": "paths",
+      "flags": [
+        "degenerate-line"
+      ],
+      "name": "Centre Street"
+    },
+    {
+      "id": "way/1015253069",
+      "group": "paths",
+      "flags": [
+        "degenerate-line"
+      ],
+      "name": "Centre Street"
+    },
+    {
+      "id": "way/1015253070",
+      "group": "paths",
+      "flags": [
+        "degenerate-line"
+      ],
+      "name": "Centre Street"
+    },
+    {
+      "id": "way/1015253076",
+      "group": "paths",
+      "flags": [
+        "degenerate-line"
+      ],
+      "name": "Centre Street"
+    },
+    {
+      "id": "way/1015253079",
+      "group": "paths",
+      "flags": [
+        "degenerate-line"
+      ],
+      "name": "Centre Street"
+    },
+    {
+      "id": "way/1015253104",
+      "group": "paths",
+      "flags": [
+        "degenerate-line"
+      ],
+      "name": "Centre Street"
+    },
+    {
+      "id": "way/1015253137",
+      "group": "paths",
+      "flags": [
+        "degenerate-line"
+      ]
+    },
+    {
+      "id": "way/1015254138",
+      "group": "paths",
+      "flags": [
+        "degenerate-line"
+      ]
+    },
+    {
+      "id": "way/1015254139",
+      "group": "paths",
+      "flags": [
+        "degenerate-line"
+      ]
+    },
+    {
+      "id": "way/1015254141",
+      "group": "paths",
+      "flags": [
+        "degenerate-line"
+      ]
+    },
+    {
+      "id": "way/1310476512",
+      "group": "paths",
+      "flags": [
+        "degenerate-line"
+      ]
+    },
+    {
+      "id": "way/1313794520",
+      "group": "paths",
+      "flags": [
+        "degenerate-line"
+      ]
+    },
+    {
+      "id": "way/1356805949",
+      "group": "stairs",
+      "flags": [
+        "degenerate-line"
+      ],
+      "name": "High Street"
+    },
+    {
+      "id": "way/1357085363",
+      "group": "paths",
+      "flags": [
+        "degenerate-line"
+      ]
+    },
+    {
+      "id": "way/1359721454",
+      "group": "bridges",
+      "flags": [
+        "degenerate-line"
+      ]
+    },
+    {
+      "id": "way/1433191592",
+      "group": "roads",
+      "flags": [
+        "degenerate-line"
+      ]
+    },
+    {
+      "id": "way/1545961510",
+      "group": "paths",
+      "flags": [
+        "degenerate-line"
+      ]
+    }
+  ]
+}
