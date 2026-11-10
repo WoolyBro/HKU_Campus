@@ -1,0 +1,13 @@
+{
+  "description": "Named zones of the HKU study area. 'Main Campus' follows the campus grouping of the official HKU Campus Map. The official map lists Centennial Campus buildings under Main Campus, so the Centennial Campus, the residential halls and the western sites are project groupings of official map locations (by official location id). Each zone can be enabled, disabled or expanded independently; the build derives the zone grid from these settings.",
+  "sourceUrl": "https://www.maps.hku.hk/",
+  "placeIds": [201, 195, 191, 190, 192, 193, 167, 172],
+  "placeNote": "Official map locations that are open-air places or gates rather than buildings; shown as landmark points.",
+  "zones": [
+    { "id": 1, "key": "main", "nameEn": "Main Campus", "nameZh": "本部校園", "source": "official-campus-id", "officialCampusId": 1, "enabled": true, "expandRadiusM": 60 },
+    { "id": 2, "key": "centennial", "nameEn": "Centennial Campus", "nameZh": "百周年校園", "source": "official-location-list", "officialIds": [173, 174, 180, 178, 179, 195, 201, 175, 181, 176, 177, 184], "enabled": true, "expandRadiusM": 60 },
+    { "id": 3, "key": "halls", "nameEn": "Residential Halls & Colleges", "nameZh": "舍堂及書院", "source": "official-location-list", "officialIds": [79, 91, 136, 125, 133, 93, 106, 137, 189, 42, 49, 41], "enabled": true, "expandRadiusM": 45 },
+    { "id": 4, "key": "west", "nameEn": "Pokfield & Kennedy Town sites", "nameZh": "蒲飛路及堅尼地城", "source": "official-location-list", "officialIds": [69, 87], "enabled": true, "expandRadiusM": 45 },
+    { "id": 5, "key": "station", "nameEn": "HKU MTR Station area", "nameZh": "港鐵香港大學站", "source": "anchor-radius", "anchor": "osm:railway=station", "enabled": true, "expandRadiusM": 60 }
+  ]
+}
