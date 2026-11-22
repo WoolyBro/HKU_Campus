@@ -12,7 +12,7 @@
  * All geometry originates from a geographic coordinate (OSM, Lands Department DTM, official HKU
  * map points) or from a documented entry in data/manual-overrides.json.
  */
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { gzipSync } from 'node:zlib'
@@ -22,11 +22,24 @@ import { estimateHeight } from '../src/lib/geo/height'
 import { worldToLonLat } from '../src/lib/geo/projection'
 import { M, ZONE_COLOURS } from '../src/lib/voxel/palette'
 import { QuadSink, Volume, meshVolume } from '../src/lib/voxel/mesher'
-import { PROP, PROP_STRIDE, TREE, TREE_STRIDE, type FeatureRecord, type StructureGroup, type WorldMeta, type ZoneInfo } from '../src/lib/voxel/world-format'
+import {
+  PROP,
+  PROP_STRIDE,
+  TREE,
+  TREE_STRIDE,
+  type FeatureRecord,
+  type GuideFact,
+  type GuideInfo,
+  type PoiCategory,
+  type StructureGroup,
+  type WorldMeta,
+  type ZoneInfo,
+} from '../src/lib/voxel/world-format'
 import { D, N, W, distanceTo, hash2, lineLength, percentile, pointAlong, projectLine, rasterPolygon, ringsOf, stampLine, strSeed, toGrid, valueNoise } from './world/grid'
 import { applyAreas, applyBridges, applyPaths, applyRoads, applyStreams, blendShoulders, inpaint, lineRecs, makeSea, type F } from './world/terrain-pass'
 import { approx, canopy, entrances, makeVolume, massing, pickContextStyle, pickStyle, prepare } from './world/buildings'
 import { LANDMARKS, MODELS, OPEN_MODELS } from './world/landmarks'
+import { cellCost, simplify, walk, walkStats } from './world/tours'
 import type { Bld, OfficialBuilding, State } from './world/types'
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..')
@@ -1021,6 +1034,308 @@ const ll = (gx: number, gz: number) => {
   const p = worldToLonLat(gx + WORLD.minX, gz + WORLD.minZ)
   return { lat: Math.round(p.lat * 1e6) / 1e6, lon: Math.round(p.lon * 1e6) / 1e6 }
 }
+
+// ───────────────────────── student guide ─────────────────────────
+// Points of interest (OpenStreetMap amenities and shops; transit stops with their routes), and for every campus
+// building: facts with their sources, what is mapped inside it, what is near it, accessibility.
+interface Poi {
+  key: string
+  name: string
+  cat: PoiCategory
+  label: string
+  gx: number
+  gz: number
+  detail?: string
+  osm?: string
+  rank: number
+  alt?: string[]
+}
+const pois: Poi[] = []
+const POI_KIND: Record<string, [PoiCategory, string]> = {
+  restaurant: ['food', 'Restaurant'],
+  fast_food: ['food', 'Fast food'],
+  food_court: ['food', 'Food court'],
+  ice_cream: ['food', 'Ice cream'],
+  pub: ['food', 'Pub'],
+  bar: ['food', 'Bar'],
+  cafe: ['cafe', 'Café'],
+  library: ['library', 'Library'],
+  'area:library': ['library', 'Library'],
+  bicycle_rental: ['bike', 'Bike Share station'],
+  bicycle_repair_station: ['bike', 'Bike repair station'],
+  pharmacy: ['health', 'Pharmacy'],
+  clinic: ['health', 'Clinic'],
+  doctors: ['health', 'Doctor'],
+  dentist: ['health', 'Dentist'],
+  hospital: ['health', 'Hospital'],
+  healthcare: ['health', 'Health care'],
+  emergency_phone: ['safety', 'Emergency phone'],
+  emergency_defibrillator: ['safety', 'Defibrillator (AED)'],
+  police: ['safety', 'Police'],
+  shop: ['shop', 'Shop'],
+  theatre: ['culture', 'Theatre'],
+  'area:theatre': ['culture', 'Theatre'],
+  arts_centre: ['culture', 'Arts centre'],
+  cinema: ['culture', 'Cinema'],
+  museum: ['culture', 'Museum'],
+  artwork: ['culture', 'Artwork'],
+  place_of_worship: ['culture', 'Place of worship'],
+  atm: ['service', 'ATM'],
+  bank: ['service', 'Bank'],
+  post_office: ['service', 'Post office'],
+  information: ['info', 'Information'],
+  office_university: ['service', 'University office'],
+  drinking_water: ['service', 'Drinking water'],
+  toilets: ['service', 'Washroom'],
+  fitness_centre: ['sport', 'Fitness centre'],
+  sports_centre: ['sport', 'Sports centre'],
+  'area:sports_centre': ['sport', 'Sports centre'],
+  'area:stadium': ['sport', 'Stadium'],
+  swimming_pool: ['sport', 'Swimming pool'],
+}
+/** Extra search words, so that "coffee", "study" or "restroom" find the right places. */
+const POI_SYNONYMS: Record<string, string[]> = {
+  cafe: ['coffee', 'tea'],
+  library: ['study', 'books'],
+  food: ['eat', 'lunch', 'dinner'],
+  fast_food: ['eat', 'lunch', 'takeaway'],
+  restaurant: ['eat', 'lunch', 'dinner'],
+  food_court: ['eat', 'lunch', 'cafeteria'],
+  toilets: ['toilet', 'restroom', 'bathroom'],
+  drinking_water: ['water fountain', 'water bottle refill'],
+  bicycle_rental: ['bike share', 'bikeshare', 'bicycle'],
+  bicycle_parking: ['bike rack', 'bicycle'],
+  atm: ['cash', 'money'],
+  pharmacy: ['drugstore', 'medicine'],
+  fitness_centre: ['gym', 'workout'],
+  emergency_phone: ['blue light', 'campus safety', 'help'],
+  shop: ['store'],
+}
+const centroidOf = (g: F['geometry']): [number, number] | null => {
+  if (g.type === 'Point') return (g as Point).coordinates as [number, number]
+  if (g.type === 'Polygon' || g.type === 'MultiPolygon') {
+    const r = g.type === 'Polygon' ? (g as Polygon).coordinates[0] : (g as MultiPolygon).coordinates[0]?.[0]
+    if (!r?.length) return null
+    let x = 0,
+      y = 0
+    for (const p of r) {
+      x += p[0]
+      y += p[1]
+    }
+    return [x / r.length, y / r.length]
+  }
+  return null
+}
+for (const f of facF) {
+  const t = f.properties.tags
+  const k = POI_KIND[f.properties.kind]
+  if (!k) continue
+  const name = t['name:en'] ?? t.name ?? (k[0] === 'safety' || k[0] === 'bike' || k[0] === 'service' ? k[1] : '')
+  if (!name) continue
+  const c = centroidOf(f.geometry)
+  if (!c) continue
+  const [gx, gz] = toGrid(c[0], c[1])
+  if (gx < 1 || gz < 1 || gx >= W - 1 || gz >= D - 1) continue
+  const label =
+    f.properties.kind === 'shop' && t.shop
+      ? `Shop · ${t.shop.replace(/_/g, ' ')}`
+      : f.properties.kind === 'restaurant' && t.cuisine
+        ? `Restaurant · ${t.cuisine.replace(/_/g, ' ').replace(/;/g, ', ')}`
+        : k[1]
+  const detail = [t.opening_hours ? `Hours (OSM): ${t.opening_hours}` : '', t.capacity ? `${t.capacity} docks` : '', t.wheelchair ? `Wheelchair: ${t.wheelchair}` : ''].filter(Boolean).join(' · ')
+  const rank = k[0] === 'library' ? 58 : k[0] === 'culture' && f.properties.kind !== 'artwork' ? 40 : k[0] === 'food' || k[0] === 'cafe' ? 26 : 22
+  pois.push({
+    key: f.properties.id,
+    name,
+    cat: k[0],
+    label,
+    gx,
+    gz,
+    detail: detail || undefined,
+    osm: f.properties.id,
+    rank,
+    alt: [k[1], ...(POI_SYNONYMS[f.properties.kind] ?? POI_SYNONYMS[k[0]] ?? []), t.brand ?? '', t.operator ?? ''].filter(Boolean),
+  })
+}
+// transit stops with the routes calling there (data/processed/transit.json); subway platforms grouped into one station
+const transit = (existsSync(resolve(ROOT, 'data/processed/transit.json')) ? J('data/processed/transit.json') : { agency: '', stops: [] }) as {
+  agency: string
+  label?: string
+  stops: { id: string; code: string; name: string; lat: number; lon: number; routes: { short: string; long: string; mode: string }[] }[]
+}
+{
+  const stations = new Map<string, { pts: [number, number][]; lines: Set<string> }>()
+  for (const st of transit.stops) {
+    const subway = st.routes.some((r) => r.mode === 'subway')
+    if (subway) {
+      const nm = st.name.replace(/\s*-\s*.*$/, '').replace(/\s+Station$/i, '') + ' Station'
+      const cur = stations.get(nm) ?? { pts: [], lines: new Set<string>() }
+      cur.pts.push([st.lon, st.lat])
+      for (const r of st.routes) if (r.mode === 'subway') cur.lines.add(r.long.replace(/^(\d+)\s+/, '$1 '))
+      stations.set(nm, cur)
+      continue
+    }
+    if (!st.routes.length) continue
+    const [gx, gz] = toGrid(st.lon, st.lat)
+    if (gx < 1 || gz < 1 || gx >= W - 1 || gz >= D - 1) continue
+    const modes = new Set(st.routes.map((r) => r.mode))
+    pois.push({
+      key: `transit/${transit.agency.toLowerCase()}-${st.id}`,
+      name: st.name,
+      cat: 'transit',
+      label: `${[...modes].map((m) => ({ bus: 'Bus', minibus: 'Minibus', tram: 'Tram', ferry: 'Ferry', streetcar: 'Streetcar' })[m] ?? m).join(' & ')} stop${st.code ? ` · ${st.code}` : ''}`,
+      gx,
+      gz,
+      detail: st.routes.map((r) => `${r.short} ${r.long}`).join(' · '),
+      rank: 32,
+      alt: [...st.routes.map((r) => r.short), st.code, 'bus stop', ...modes].filter(Boolean),
+    })
+  }
+  for (const [nm, v] of stations) {
+    const lon = v.pts.reduce((a, q) => a + q[0], 0) / v.pts.length,
+      lat = v.pts.reduce((a, q) => a + q[1], 0) / v.pts.length
+    const [gx, gz] = toGrid(lon, lat)
+    if (gx < 1 || gz < 1 || gx >= W - 1 || gz >= D - 1) continue
+    pois.push({
+      key: `transit/station-${nm.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`,
+      name: nm,
+      cat: 'transit',
+      label: 'Subway station',
+      gx,
+      gz,
+      detail: [...v.lines].join(' · '),
+      rank: 86,
+      alt: ['subway', ...v.lines],
+    })
+  }
+}
+const subwayStations = pois.filter((q) => q.label === 'Subway station')
+// TTC bus bays inside a station carry the station's name: label them as the bus platform
+for (const q of pois) if (q.cat === 'transit' && !subwayStations.includes(q) && subwayStations.some((st) => st.name === q.name)) q.name = `${q.name} (bus platform)`
+log(
+  `guide: ${pois.length} points of interest (${pois.filter((q) => q.cat === 'transit').length} transit stops from ${transit.agency === 'OSM' ? 'OpenStreetMap' : transit.agency || 'no feed'}, ${pois.filter((q) => q.cat === 'food' || q.cat === 'cafe').length} food & coffee, ${pois.filter((q) => q.cat === 'library').length} libraries)`,
+)
+
+// building facts: Wikidata (name match within 80 m of the footprint), declared monuments, OSM tags
+const guideFacts = (existsSync(resolve(ROOT, 'data/processed/guide-facts.json')) ? J('data/processed/guide-facts.json') : { wikidata: [], monuments: [] }) as {
+  wikidata: { id: string; label: string; aliases: string[]; lat: number; lon: number; inception: string; architects: string; styles: string; heritage: string; structure?: boolean }[]
+  monuments?: { name: string; status: string; lat: number; lon: number; source: string }[]
+}
+const guideOf = new Map<Bld, GuideInfo>()
+let withFacts = 0
+// each declared monument belongs to one building: the one it names (within 60 m), else the one containing its centre
+const monumentOf = new Map<Bld, NonNullable<typeof guideFacts.monuments>>()
+for (const m of guideFacts.monuments ?? []) {
+  const [gx, gz] = toGrid(m.lon, m.lat)
+  const mname = norm(m.name.replace(/,.*$/, '').replace(/\(.*\)/, ''))
+  let best: Bld | undefined,
+    bs = Infinity
+  for (const b of blds) {
+    if (gx < b.i0 - 60 || gx > b.i1 + 60 || gz < b.j0 - 60 || gz > b.j1 + 60) continue
+    const d = pointDist(b, gx, gz)
+    const named = [b.nameEn, b.official?.nameEn].some((x) => !!x && norm(x).length >= 6 && (norm(x) === mname || mname.includes(norm(x)) || norm(x).includes(mname)))
+    const score = named ? d - 1000 : d
+    if (((named && d <= 60) || d <= 2) && score < bs) {
+      bs = score
+      best = b
+    }
+  }
+  if (best) monumentOf.set(best, [...(monumentOf.get(best) ?? []), m])
+}
+for (const b of blds) {
+  if (b.tier === 'C' && !b.official) continue
+  const o = b.official
+  const facts: GuideFact[] = []
+  const words = (x: string) =>
+    x
+      .toLowerCase()
+      .replace(/&/g, ' and ')
+      .replace(/[^a-z0-9 ]/g, ' ')
+      .split(/\s+/)
+      .filter((w) => w && !['and', 'the', 'ltd', 'limited', 'inc', 'architects', 'architect', 'with', 'co'].includes(w))
+      .sort()
+      .join(' ')
+  const add = (label: string, value: string | undefined, source: string) => {
+    if (!value) return
+    const v = value.trim().replace(/\.$/, '')
+    const same = facts.find(
+      (f) => f.label === label && (norm(f.value) === norm(v) || words(f.value) === words(v) || (label === 'Heritage' && (norm(f.value).includes(norm(v)) || norm(v).includes(norm(f.value))))),
+    )
+    if (same) {
+      if (v.length > same.value.length) same.value = v
+      if (!same.source.includes(source)) same.source += ` · ${source}`
+    } else facts.push({ label, value: v, source })
+  }
+  const names = [o?.nameEn, b.nameEn, b.landmark?.title, ...((o as { aliases?: string[] } | undefined)?.aliases ?? []), ...(b.aliasNames ?? []), b.tags.name, b.tags['name:en'], b.tags.alt_name]
+    .filter(Boolean)
+    .map((x) => norm(x))
+  const near = (lon: number, lat: number, m: number) => {
+    const [gx, gz] = toGrid(lon, lat)
+    return gx >= b.i0 - m && gx <= b.i1 + m && gz >= b.j0 - m && gz <= b.j1 + m && pointDist(b, gx, gz) <= m
+  }
+  // same name within 80 m, or one name containing the other (≥ 8 characters) within 40 m:
+  // "Main Building of the University of Hong Kong" ↔ "Main Building"
+  const wdName = (l: string, strict: boolean) => {
+    const a = norm(l)
+    return a.length > 3 && names.some((nm) => nm === a || (!strict && Math.min(nm.length, a.length) >= 7 && (a.includes(nm) || nm.includes(a))))
+  }
+  const wd =
+    guideFacts.wikidata.find((x) => x.structure && [x.label, ...x.aliases].some((l) => wdName(l, true)) && near(x.lon, x.lat, 80)) ??
+    guideFacts.wikidata.find((x) => x.structure && (x.inception || x.architects || x.heritage) && [x.label, ...x.aliases].some((l) => wdName(l, false)) && near(x.lon, x.lat, 40))
+  if (wd) {
+    add('Built', wd.inception, 'Wikidata')
+    add('Architect', wd.architects, 'Wikidata')
+    add('Style', wd.styles, 'Wikidata')
+    add('Heritage', wd.heritage, 'Wikidata')
+  }
+  for (const m of monumentOf.get(b) ?? []) add('Heritage', m.status, m.source)
+  add('Built', b.tags.start_date, 'OpenStreetMap')
+  add('Architect', b.tags.architect, 'OpenStreetMap')
+  add('Style', b.tags['building:architecture']?.replace(/_/g, ' '), 'OpenStreetMap')
+  // inside: named places mapped within the footprint
+  const insideCount = new Map<string, number>()
+  for (const q of pois)
+    if (q.cat !== 'transit' && q.cat !== 'safety' && S.bld[Math.floor(q.gz) * W + Math.floor(q.gx)] === b.idx && norm(q.name) !== norm(b.nameEn)) {
+      const txt = norm(q.name) === norm(q.label) ? q.label : `${q.name} (${q.label.toLowerCase()})`
+      insideCount.set(txt, (insideCount.get(txt) ?? 0) + 1)
+    }
+  const inside = [...insideCount].map(([txt, k]) => (k > 1 ? `${txt} ×${k}` : txt))
+  const nearOf = (cat: PoiCategory, maxM: number, count: number, test?: (q: Poi) => boolean) =>
+    pois
+      .filter((q) => q.cat === cat && (!test || test(q)))
+      .map((q) => ({ q, d: pointDist(b, q.gx, q.gz) }))
+      .filter((x) => x.d <= maxM && S.bld[Math.floor(x.q.gz) * W + Math.floor(x.q.gx)] !== b.idx)
+      .sort((x, y) => x.d - y.d)
+      .filter((x, k, arr) => arr.findIndex((y) => y.q.name === x.q.name) === k)
+      .slice(0, count)
+      .map((x) => ({ name: x.q.name, cat, distM: Math.round(x.d), detail: x.q.detail?.slice(0, 120), key: x.q.key }))
+  const nearby = [
+    ...nearOf('transit', 900, 1, (q) => q.rank >= 80),
+    ...nearOf('transit', 300, 2, (q) => q.rank < 80),
+    ...nearOf('library', 450, 1),
+    ...nearOf('cafe', 220, 2),
+    ...nearOf('food', 220, 2),
+    ...nearOf('bike', 300, 1),
+  ]
+  const ents = facF.filter((f) => f.properties.kind === 'entrance' && f.geometry.type === 'Point').filter((f) => near((f.geometry as Point).coordinates[0], (f.geometry as Point).coordinates[1], 2))
+  const acc = ents.filter((f) => f.properties.tags.wheelchair === 'yes' || f.properties.tags.automatic_door || f.properties.tags.door === 'automatic')
+  const access = [
+    b.tags.wheelchair ? `Wheelchair access (OSM): ${b.tags.wheelchair}` : '',
+    ents.length ? `${ents.length} mapped entrance${ents.length > 1 ? 's' : ''}${acc.length ? `, ${acc.length} marked accessible or automatic` : ''}` : '',
+  ]
+    .filter(Boolean)
+    .join(' · ')
+  const g: GuideInfo = {
+    facts: facts.length ? facts : undefined,
+    inside: inside.length ? inside.slice(0, 10) : undefined,
+    nearby: nearby.length ? (nearby as GuideInfo['nearby']) : undefined,
+    access: access || undefined,
+    address: b.tags['addr:housenumber'] && b.tags['addr:street'] ? `${b.tags['addr:housenumber']} ${b.tags['addr:street']}` : undefined,
+  }
+  if (facts.length) withFacts++
+  guideOf.set(b, g)
+}
+log(`guide: facts for ${withFacts} campus buildings (${guideFacts.wikidata.length} Wikidata items, ${guideFacts.monuments?.length ?? 0} monuments)`)
 for (const b of blds) {
   const o = b.official
   const name = b.nameEn || b.nameZh || b.derivedName || (b.category === 'canopy' ? 'Covered structure' : 'Unnamed building')
@@ -1055,6 +1370,7 @@ for (const b of blds) {
     notes: b.notes.join(' ') || undefined,
     rank,
     alt: alt.length ? alt : undefined,
+    guide: guideOf.get(b),
   })
 }
 const pushPoint = (rec: Omit<FeatureRecord, 'i' | 'x' | 'y' | 'z' | 'lat' | 'lon'>, lon: number, lat: number): boolean => {
@@ -1062,6 +1378,30 @@ const pushPoint = (rec: Omit<FeatureRecord, 'i' | 'x' | 'y' | 'z' | 'lat' | 'lon
   if (gx < 0 || gz < 0 || gx >= W || gz >= D) return false
   features.push({ ...rec, i: features.length + 1, x: wx(gx), y: groundY(gx, gz), z: wz(gz), lat: Math.round(lat * 1e6) / 1e6, lon: Math.round(lon * 1e6) / 1e6 })
   return true
+}
+{
+  // student-guide points of interest (OSM amenities and shops, official transit stops)
+  for (const q of pois) {
+    const p = worldToLonLat(q.gx + WORLD.minX, q.gz + WORLD.minZ)
+    pushPoint(
+      {
+        key: q.key,
+        kind: 'poi',
+        poi: q.cat,
+        name: q.name,
+        zone: 0,
+        category: q.label,
+        geom: 'inferred',
+        nameSource: q.cat === 'transit' && transit.agency !== 'OSM' ? 'official-transit' : 'osm',
+        osm: q.osm,
+        rank: q.rank,
+        alt: q.alt?.length ? q.alt : undefined,
+        notes: q.detail,
+      },
+      p.lon,
+      p.lat,
+    )
+  }
 }
 for (const l of official.landmarks as { officialId: number; nameEn: string; nameZh: string; zoneId: number; point: { lat: number; lon: number } | null }[]) {
   if (l.point && !mergedLandmarks.has(l.nameEn))
@@ -1349,6 +1689,233 @@ const treesBin = gzipSync(packRecords(trees, TREE_STRIDE), { level: 9 })
 const propsBin = gzipSync(packRecords(props, PROP_STRIDE), { level: 9 })
 writeFileSync(resolve(OUT, 'trees.bin'), treesBin)
 writeFileSync(resolve(OUT, 'props.bin'), propsBin)
+// ───────── curated walking tours, routed along mapped paths ─────────
+{
+  const file = 'data/curated/tours.json'
+  const out: { id: string; title: string; summary: string; distanceM: number; minutes: number; stops: { i: number; key: string; name: string; text: string; legM: number }[]; path: number[] }[] = []
+  if (existsSync(resolve(ROOT, file))) {
+    const cfg = J(file) as { tours: { id: string; title: string; summary: string; stops: { key: string; text: string }[] }[] }
+    const byKeyF = new Map(features.map((f) => [f.key, f]))
+    const bldByKey = new Map(blds.map((b) => [b.id, b]))
+    const walkable = (c: number) => Number.isFinite(cellCost(S, c))
+    // cells where a walk may end for a stop: around a building's footprint, or near a point
+    const goalsOf = (key: string, f: FeatureRecord): Set<number> => {
+      const goals = new Set<number>()
+      const gi0 = Math.round(f.x - WORLD.minX),
+        gj0 = Math.round(f.z - WORLD.minZ)
+      // a point inside a building (e.g. a gym mapped as a node): walk to that building
+      const host = gi0 >= 0 && gj0 >= 0 && gi0 < W && gj0 < D ? S.bld[gj0 * W + gi0] : 0
+      const b = bldByKey.get(key) ?? (host ? blds[host - 1] : undefined)
+      if (b) {
+        for (const c of b.cells) for (const q of [c - 1, c + 1, c - W, c + W, c - 2, c + 2, c - 2 * W, c + 2 * W]) if (q >= 0 && q < N && walkable(q) && S.bld[q] !== b.idx) goals.add(q)
+        // a tower on a podium has no walkable ground beside it: end at the nearest walkable cells within 40 m
+        for (let r = 3; r <= 40 && goals.size === 0; r++)
+          for (const c of b.cells) {
+            const i = c % W,
+              j = (c / W) | 0
+            for (const [di, dj] of [
+              [r, 0],
+              [-r, 0],
+              [0, r],
+              [0, -r],
+            ]) {
+              const ii = i + di,
+                jj = j + dj
+              if (ii > 0 && jj > 0 && ii < W - 1 && jj < D - 1 && walkable(jj * W + ii)) goals.add(jj * W + ii)
+            }
+          }
+        return goals
+      }
+      const gi = Math.round(f.x - WORLD.minX),
+        gj = Math.round(f.z - WORLD.minZ)
+      for (let r = 0; r <= 12 && goals.size < 6; r++)
+        for (let dj = -r; dj <= r; dj++)
+          for (let di = -r; di <= r; di++) {
+            const i = gi + di,
+              j = gj + dj
+            if (i < 1 || j < 1 || i >= W - 1 || j >= D - 1) continue
+            const c = j * W + i
+            if (walkable(c)) goals.add(c)
+          }
+      return goals
+    }
+    for (const t of cfg.tours) {
+      const stops: { i: number; key: string; name: string; text: string; legM: number }[] = []
+      const cells: number[] = []
+      let cur = -1
+      let total = 0
+      let carry = 0
+      let arrivedAt = -1
+      for (const [si, st] of t.stops.entries()) {
+        const f = byKeyF.get(st.key)
+        if (!f) {
+          log(`tour ${t.id}: stop ${st.key} not in the model — skipped`)
+          continue
+        }
+        const goals = goalsOf(st.key, f)
+        let legM = 0
+        const arrival = arrivedAt
+        if (cur < 0) {
+          cur = [...goals][0] ?? -1
+        } else {
+          const tw = Date.now()
+          // a podium deck whose stairs are not mapped: retry letting steep steps through at a high cost
+          let path = walk(S, cur, goals) ?? walk(S, cur, goals, 350, true)
+          // still cut off: start again from where the walker reached the previous stop
+          if (!path && arrival >= 0 && arrival !== cur) path = walk(S, arrival, goals) ?? walk(S, arrival, goals, 350, true)
+          if (process.env.TOUR_DEBUG)
+            log(`  leg → ${f.name}: ${Date.now() - tw} ms, ${goals.size} goal cells, ${path ? path.length : 'no'} path cells, expanded ${walkStats.expanded}, pushed ${walkStats.pushed}`)
+          if (!path) log(`tour ${t.id}: no walking route to ${f.name}`)
+          else {
+            for (let k = 1; k < path.length; k++) legM += Math.hypot((path[k] % W) - (path[k - 1] % W), ((path[k] / W) | 0) - ((path[k - 1] / W) | 0))
+            cells.push(...(cells.length ? path.slice(1) : path))
+            cur = path[path.length - 1]
+            arrivedAt = cur
+          }
+        }
+        // A visitor walks through a building stop: the next leg starts from the side nearest the next stop
+        // (the distance through the building is counted on the next leg).
+        const nextF = t.stops[si + 1] ? byKeyF.get(t.stops[si + 1].key) : undefined
+        let through = 0
+        if (nextF && cur >= 0 && bldByKey.has(st.key)) {
+          const nx = nextF.x - WORLD.minX,
+            nz = nextF.z - WORLD.minZ
+          // the exit nearest the next stop that is not a walled-in pocket (reaches ≥ 2500 walkable cells)
+          let best = cur
+          const opened = (start: number) => {
+            const seen = new Set<number>([start])
+            const queue = [start]
+            while (queue.length && seen.size < 2500) {
+              const c = queue.pop()!
+              for (const q of [c - 1, c + 1, c - W, c + W])
+                if (!seen.has(q) && q >= 0 && q < N && walkable(q)) {
+                  seen.add(q)
+                  queue.push(q)
+                }
+            }
+            return seen.size >= 2500
+          }
+          for (const c of [...goals].sort((a, b2) => Math.hypot((a % W) - nx, ((a / W) | 0) - nz) - Math.hypot((b2 % W) - nx, ((b2 / W) | 0) - nz)).slice(0, 60))
+            if (opened(c)) {
+              best = c
+              break
+            }
+          if (best !== cur) {
+            through = Math.hypot((best % W) - (cur % W), ((best / W) | 0) - ((cur / W) | 0))
+            cells.push(best)
+            cur = best
+          }
+        }
+        total += legM
+        stops.push({ i: f.i, key: f.key, name: f.name, text: st.text, legM: Math.round(legM + carry) })
+        carry = through
+      }
+      const pts = simplify(cells.map((c) => [(c % W) + 0.5, ((c / W) | 0) + 0.5] as [number, number]))
+      const path: number[] = []
+      for (const [gx, gz] of pts) {
+        const c = Math.floor(gz) * W + Math.floor(gx)
+        path.push(Math.round((gx + WORLD.minX) * 10) / 10, S.H[c] - Y_BIAS + 0.45, Math.round((gz + WORLD.minZ) * 10) / 10)
+      }
+      total = stops.reduce((a, x) => a + x.legM, 0)
+      out.push({ id: t.id, title: t.title, summary: t.summary, distanceM: Math.round(total), minutes: Math.round((total * 1.05) / 80), stops, path })
+      log(`tour ${t.id}: ${stops.length} stops, ${(total / 1000).toFixed(2)} km walk`)
+    }
+  }
+  writeFileSync(resolve(OUT, 'tours.json'), JSON.stringify({ note: 'Curated walking tours; routes follow mapped paths and are illustrative only — not for navigation.', tours: out }))
+}
+{
+  const byKey = new Map(features.map((f) => [f.key, f.i]))
+  for (const f of features)
+    for (const n of f.guide?.nearby ?? []) {
+      const k = (n as { key?: string }).key
+      if (k) {
+        n.i = byKey.get(k)
+        delete (n as { key?: string }).key
+      }
+    }
+}
+// the nearest metro / rail station (station markers and grouped stations), within 900 m of each building
+{
+  const stations = features.filter(
+    (f) => (f.kind === 'landmark' && /station/i.test(f.category) && !/future|not yet|exit/i.test(f.category)) || (f.kind === 'poi' && f.poi === 'transit' && f.rank >= 80),
+  )
+  for (const f of features) {
+    if (f.kind !== 'building' || !f.guide || !f.bbox || f.guide.nearby?.some((n) => n.i && stations.some((s) => s.i === n.i))) continue
+    const [x0, z0, x1, z1] = f.bbox
+    let best: FeatureRecord | undefined,
+      bd = 900
+    for (const st of stations) {
+      const d = Math.hypot(Math.max(x0 - st.x, 0, st.x - x1), Math.max(z0 - st.z, 0, st.z - z1))
+      if (d < bd) {
+        bd = d
+        best = st
+      }
+    }
+    if (best) f.guide.nearby = [{ name: best.name, cat: 'transit', distM: Math.round(bd), detail: best.notes?.slice(0, 120), i: best.i }, ...(f.guide.nearby ?? [])]
+  }
+}
+{
+  const byKey = new Map(features.map((f) => [f.key, f.i]))
+  for (const f of features)
+    for (const n of f.guide?.nearby ?? []) {
+      const k = (n as { key?: string }).key
+      if (k) {
+        n.i = byKey.get(k)
+        delete (n as { key?: string }).key
+      }
+    }
+}
+// the nearest metro / rail station (station markers and grouped stations), within 900 m of each building
+{
+  const stations = features.filter(
+    (f) => (f.kind === 'landmark' && /station/i.test(f.category) && !/future|not yet|exit/i.test(f.category)) || (f.kind === 'poi' && f.poi === 'transit' && f.rank >= 80),
+  )
+  for (const f of features) {
+    if (f.kind !== 'building' || !f.guide || !f.bbox || f.guide.nearby?.some((n) => n.i && stations.some((s) => s.i === n.i))) continue
+    const [x0, z0, x1, z1] = f.bbox
+    let best: FeatureRecord | undefined,
+      bd = 900
+    for (const st of stations) {
+      const d = Math.hypot(Math.max(x0 - st.x, 0, st.x - x1), Math.max(z0 - st.z, 0, st.z - z1))
+      if (d < bd) {
+        bd = d
+        best = st
+      }
+    }
+    if (best) f.guide.nearby = [{ name: best.name, cat: 'transit', distM: Math.round(bd), detail: best.notes?.slice(0, 120), i: best.i }, ...(f.guide.nearby ?? [])]
+  }
+}
+{
+  const byKey = new Map(features.map((f) => [f.key, f.i]))
+  for (const f of features)
+    for (const n of f.guide?.nearby ?? []) {
+      const k = (n as { key?: string }).key
+      if (k) {
+        n.i = byKey.get(k)
+        delete (n as { key?: string }).key
+      }
+    }
+}
+// the nearest metro / rail station (station markers and grouped stations), within 900 m of each building
+{
+  const stations = features.filter(
+    (f) => (f.kind === 'landmark' && /station/i.test(f.category) && !/future|not yet|exit/i.test(f.category)) || (f.kind === 'poi' && f.poi === 'transit' && f.rank >= 80),
+  )
+  for (const f of features) {
+    if (f.kind !== 'building' || !f.guide || !f.bbox || f.guide.nearby?.some((n) => n.i && stations.some((s) => s.i === n.i))) continue
+    const [x0, z0, x1, z1] = f.bbox
+    let best: FeatureRecord | undefined,
+      bd = 900
+    for (const st of stations) {
+      const d = Math.hypot(Math.max(x0 - st.x, 0, st.x - x1), Math.max(z0 - st.z, 0, st.z - z1))
+      if (d < bd) {
+        bd = d
+        best = st
+      }
+    }
+    if (best) f.guide.nearby = [{ name: best.name, cat: 'transit', distM: Math.round(bd), detail: best.notes?.slice(0, 120), i: best.i }, ...(f.guide.nearby ?? [])]
+  }
+}
 writeFileSync(resolve(OUT, 'features.json'), JSON.stringify(features))
 
 const count = (pred: (b: Bld) => boolean) => blds.filter(pred).length

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T14:50:02.876Z",
+  "generatedAt": "2026-11-22T07:44:43.430Z",
   "source": {
     "file": "data/raw/osm-hku.json",
     "fetchedAt": "2026-11-10T14:46:27.439Z",
@@ -14,11 +14,11 @@
     "bridges": 159,
     "waterways": 35,
     "vegetation": 108,
-    "facilities": 575,
+    "facilities": 882,
     "transport": 107,
     "terrain-features": 174
   },
-  "skippedUnclassified": 1806,
+  "skippedUnclassified": 1765,
   "flagged": [
     {
       "id": "way/758535264",

@@ -13,14 +13,42 @@ The Sassoon Road medical campus and other HKU sites are outside it.
 
 ## What is data-driven
 
-| Aspect | Source | Notes |
-| --- | --- | --- |
-| Where buildings, roads, paths, stairs, bridges, water, woodland, pitches and car parks are | OpenStreetMap (snapshot 2026-11-10) | Volunteer-mapped; completeness varies. Rasterised to a 1 m block grid, so edges move by up to ~0.7 m |
-| Terrain shape | Lands Department 5 m DTM | Published accuracy ±5 m. Can include tree canopy and elevated roads. Resampled bicubically to 1 m, lightly smoothed, then rounded to 1 m block steps |
-| HKU building names and codes | Official HKU Campus Map | 58 of the 59 official locations inside the area matched to an OSM footprint (45 by name, 13 by location) |
-| Other building names | OpenStreetMap (247), else Lands Department Building data (399) | 215 buildings that neither source names carry a descriptive label built from their address or nearest street — not a real name |
-| Building heights, podium / tower split | Lands Department Building data (top − base level) | Used for 870 of 927 footprints; matched to OSM footprints by overlap |
-| Gates, places, MTR exits | Official map points; OSM nodes | Points, not shapes |
+| Aspect                                                                                     | Source                                                         | Notes                                                                                                                                                |
+| ------------------------------------------------------------------------------------------ | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Where buildings, roads, paths, stairs, bridges, water, woodland, pitches and car parks are | OpenStreetMap (snapshot 2026-11-10)                            | Volunteer-mapped; completeness varies. Rasterised to a 1 m block grid, so edges move by up to ~0.7 m                                                 |
+| Terrain shape                                                                              | Lands Department 5 m DTM                                       | Published accuracy ±5 m. Can include tree canopy and elevated roads. Resampled bicubically to 1 m, lightly smoothed, then rounded to 1 m block steps |
+| HKU building names and codes                                                               | Official HKU Campus Map                                        | 58 of the 59 official locations inside the area matched to an OSM footprint (45 by name, 13 by location)                                             |
+| Other building names                                                                       | OpenStreetMap (247), else Lands Department Building data (399) | 215 buildings that neither source names carry a descriptive label built from their address or nearest street — not a real name                       |
+| Building heights, podium / tower split                                                     | Lands Department Building data (top − base level)              | Used for 870 of 927 footprints; matched to OSM footprints by overlap                                                                                 |
+| Gates, places, MTR exits                                                                   | Official map points; OSM nodes                                 | Points, not shapes                                                                                                                                   |
+
+## Student guide
+
+The 🎓 Student guide adds walking tours, and every campus building's inspector shows what a student
+needs: facts with their sources, the places mapped inside it, what is near it, and accessibility as
+mapped.
+
+| Information   | Source                                                                                                                                                | Campus buildings |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
+| Facts         | Wikidata (built, architect, style, heritage — only items that are buildings, matched by name within 80 m); Antiquities and Monuments Office; OSM tags | 10               |
+| Mapped inside | OSM places located inside the footprint                                                                                                               | 26               |
+| Nearby        | nearest station, stops with routes, library, cafés, food, bike share                                                                                  | 56               |
+| Accessibility | OSM `wheelchair` and mapped entrances                                                                                                                 | 17               |
+
+- **Transit:** official stops and routes from the Transport Department's GTFS feed (DATA.GOV.HK): 131 bus / minibus stops and 81 routes in the modelled area. The MTR is not in that feed; stations come from OpenStreetMap.
+- **Heritage:** declared monuments from the Antiquities and Monuments Office (9 in the modelled area), matched to one building each by name or position.
+- **Places:** 594 guide places appear as you zoom in: transit 131, food 133, cafés 25, libraries 5, safety 8, shops 200, and others. They are filterable under Layers and searchable ("coffee", "study", a route number). OpenStreetMap coverage varies, so a place missing from the map is not necessarily missing on the ground; opening hours are as mapped.
+- **Distances:** "Nearby" distances are straight lines from the footprint, and walking times assume 80 m/min with a 30 % detour allowance.
+
+| Tour                                                   | Stops | Route  |
+| ------------------------------------------------------ | ----- | ------ |
+| HKU essentials: Centennial Campus to the Main Building | 13    | 1.7 km |
+
+**Tours:**
+
+- **Routing:** routes are computed on the block grid (A*) along mapped footpaths, plazas and sidewalks. Crossing roads and open ground costs extra, and steep unmapped steps are heavily penalised. A walker may pass through a building that is a stop.
+- **Stop texts:** short summaries written for this project from the facts in the inspector.
+- **Not directions:** tours are illustrative and say nothing about step-free access. Facts that disagree between sources are shown side by side.
 
 ## What is interpreted or invented
 
@@ -52,13 +80,13 @@ The Sassoon Road medical campus and other HKU sites are outside it.
 
 ## Building tiers — never mixed up
 
-| Tier | Count | Meaning |
-| --- | --- | --- |
-| A — landmark model | 12 | Real footprint + bespoke block model checked against official photographs |
-| B — detailed footprint model | 44 | Real footprint, official heights, procedural façade with palette hints from official photos |
-| C — context model | 871 | Off-campus buildings: real footprint, official height and podium / tower shape where available, **generic façade that is not specific to the building**. Six with no height data or under construction stay plain massing |
+| Tier                         | Count | Meaning                                                                                                                                                                                                                   |
+| ---------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| A — landmark model           | 12    | Real footprint + bespoke block model checked against official photographs                                                                                                                                                 |
+| B — detailed footprint model | 44    | Real footprint, official heights, procedural façade with palette hints from official photos                                                                                                                               |
+| C — context model            | 871   | Off-campus buildings: real footprint, official height and podium / tower shape where available, **generic façade that is not specific to the building**. Six with no height data or under construction stay plain massing |
 
-A Tier C building's geometry is always labelled *stylised / approximate* and is never reported as
+A Tier C building's geometry is always labelled _stylised / approximate_ and is never reported as
 verified geometry, even when its height is official (enforced by
 a unit test). Tier A landmarks: Main Building, Hung Hing Ying Building, Eliot Hall, May Hall,
 Fung Ping Shan Building, Tang Chi Ngong Building, The Jockey Club Tower, Run Run Shaw Tower,
@@ -68,11 +96,11 @@ turrets are my interpretation of the photographs, not measured.
 
 ## Geometry confidence
 
-| Class | Count | Rule |
-| --- | --- | --- |
-| Verified geometry | 47 | OSM footprint matched to an official HKU location **and** the official map point lies within 45 m of the footprint |
-| Inferred geometry | 9 | OSM footprint without that cross-check |
-| Stylised / approximate | 871 | Tier C |
+| Class                  | Count | Rule                                                                                                               |
+| ---------------------- | ----- | ------------------------------------------------------------------------------------------------------------------ |
+| Verified geometry      | 47    | OSM footprint matched to an official HKU location **and** the official map point lies within 45 m of the footprint |
+| Inferred geometry      | 9     | OSM footprint without that cross-check                                                                             |
+| Stylised / approximate | 871   | Tier C                                                                                                             |
 
 The overlay uses a pattern (solid / diagonal stripes / checker) and a text legend as well as colour.
 

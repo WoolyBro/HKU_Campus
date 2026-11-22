@@ -1,6 +1,26 @@
 /** Shapes of the shipped world data (public/world/*). Written by scripts/build-voxel-world.ts. */
 
-export type FeatureKind = 'building' | 'landmark' | 'facility' | 'stop' | 'road' | 'zone'
+export type FeatureKind = 'building' | 'landmark' | 'facility' | 'stop' | 'road' | 'zone' | 'poi'
+
+/** Point-of-interest categories in the student guide. */
+export type PoiCategory = 'transit' | 'food' | 'cafe' | 'library' | 'bike' | 'health' | 'safety' | 'shop' | 'culture' | 'service' | 'sport' | 'info'
+
+export interface GuideFact {
+  label: string
+  value: string
+  source: string
+}
+export interface GuideInfo {
+  /** Facts with their source: built, architect, style, heritage status. */
+  facts?: GuideFact[]
+  /** Named places mapped inside the footprint (cafés, libraries, shops, offices…). */
+  inside?: string[]
+  /** What is close by on foot (straight-line distance). */
+  nearby?: { name: string; cat: PoiCategory; distM: number; detail?: string; i?: number }[]
+  /** Accessibility as mapped in OpenStreetMap. */
+  access?: string
+  address?: string
+}
 export type GeometryConfidence = 'verified' | 'inferred' | 'approximate'
 export type Tier = 'A' | 'B' | 'C'
 
@@ -41,6 +61,10 @@ export interface FeatureRecord {
   rank: number
   /** Extra search terms. */
   alt?: string[]
+  /** Student-guide information (buildings and points of interest). */
+  guide?: GuideInfo
+  /** Point-of-interest category (kind 'poi'). */
+  poi?: PoiCategory
 }
 
 export interface StructureGroup {

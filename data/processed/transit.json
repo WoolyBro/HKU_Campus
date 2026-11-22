@@ -1,0 +1,4333 @@
+{
+ "agency": "TD",
+ "label": "bus / minibus stop",
+ "source": "https://static.data.gov.hk/td/pt-headway-en/gtfs.zip",
+ "licence": "DATA.GOV.HK Terms and Conditions of Use",
+ "generatedAt": "2026-11-22T07:44:32.982Z",
+ "stops": [
+  {
+   "id": "326",
+   "code": "",
+   "name": "Western Street, Queen's Road West",
+   "lat": 22.2869,
+   "lon": 114.14155,
+   "routes": [
+    {
+     "short": "3A",
+     "long": "Central (Star Ferry) - Felix Villas (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "4",
+     "long": "Central - Wong Chuk Hang (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "4X",
+     "long": "Sheung Wan - Wah Fu (South) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "7",
+     "long": "Shek Pai Wan - Central (Ferry Piers) (Via Chi Fu Fa Yuen) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "10",
+     "long": "North Point Ferry Pier - Kennedy Town (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "37A",
+     "long": "Chi Fu Fa Yuen - Admiralty (Circular) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "71",
+     "long": "Wong Chuk Hang - Central (Rumsey Street) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "90B",
+     "long": "South Horizons - Admiralty Station (East) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "91",
+     "long": "Ap Lei Chau Estate - Central (Ferry Piers) (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "327",
+   "code": "",
+   "name": "Li Sing Primary School, Pok Fu Lam Road",
+   "lat": 22.28547,
+   "lon": 114.13995,
+   "routes": [
+    {
+     "short": "3A",
+     "long": "Central (Star Ferry) - Felix Villas (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "4",
+     "long": "Central - Wong Chuk Hang (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "4X",
+     "long": "Sheung Wan - Wah Fu (South) (Via Rumsey Street Flyover) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "7",
+     "long": "Shek Pai Wan - Central (Ferry Piers) (Via Chi Fu Fa Yuen) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "30X",
+     "long": "Central (Exchange Square) - Cyberport (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "33X",
+     "long": "Shau Kei Wan - Cyberport (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "37A",
+     "long": "Chi Fu Fa Yuen - Admiralty (Circular) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "71",
+     "long": "Wong Chuk Hang - Central (Rumsey Street) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "90B",
+     "long": "South Horizons - Admiralty Station (East) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "91",
+     "long": "Ap Lei Chau Estate - Central (Ferry Piers) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "970",
+     "long": "Cyberport - So Uk Estate (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "970X",
+     "long": "Cheung Sha Wan (Kom Tsun Street) - Aberdeen (Via Wah Fu) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "973",
+     "long": "Tsim Sha Tsui East (Mody Road) - Stanley (Via West Kowloon Cultural District) (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "328",
+   "code": "",
+   "name": "HKU West Gate, Pok Fu Lam Road",
+   "lat": 22.28361,
+   "lon": 114.13561,
+   "routes": [
+    {
+     "short": "3A",
+     "long": "Central (Star Ferry) - Felix Villas (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "4",
+     "long": "Central - Wong Chuk Hang (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "4X",
+     "long": "Sheung Wan - Wah Fu (South) (Via Rumsey Street Flyover) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "7",
+     "long": "Shek Pai Wan - Central (Ferry Piers) (Via Chi Fu Fa Yuen) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "23",
+     "long": "North Point Ferry - Pokfield Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "30X",
+     "long": "Central (Exchange Square) - Cyberport (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "33X",
+     "long": "Shau Kei Wan - Cyberport (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "37A",
+     "long": "Chi Fu Fa Yuen - Admiralty (Circular) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "40",
+     "long": "Wah Fu (North) - Exhibition Centre Station (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "71",
+     "long": "Wong Chuk Hang - Central (Rumsey Street) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "90B",
+     "long": "South Horizons - Admiralty Station (East) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "91",
+     "long": "Ap Lei Chau Estate - Central (Ferry Piers) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "103",
+     "long": "Chuk Yuen Estate - Pokfield Rd (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "970",
+     "long": "Cyberport - So Uk Estate (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "970X",
+     "long": "Cheung Sha Wan (Kom Tsun Street) - Aberdeen (Via Wah Fu) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "973",
+     "long": "Tsim Sha Tsui East (Mody Road) - Stanley (Via West Kowloon Cultural District) (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "329",
+   "code": "",
+   "name": "Lady Ho Tung Hall, Pok Fu Lam Road",
+   "lat": 22.28374,
+   "lon": 114.13337,
+   "routes": [
+    {
+     "short": "3A",
+     "long": "Central (Star Ferry) - Felix Villas (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "4",
+     "long": "Central - Wong Chuk Hang (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "4X",
+     "long": "Sheung Wan - Wah Fu (South) (Via Rumsey Street Flyover) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "7",
+     "long": "Shek Pai Wan - Central (Ferry Piers) (Via Chi Fu Fa Yuen) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "23",
+     "long": "North Point Ferry - Pokfield Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "33X",
+     "long": "Shau Kei Wan - Cyberport (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "37A",
+     "long": "Chi Fu Fa Yuen - Admiralty (Circular) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "40",
+     "long": "Wah Fu (North) - Exhibition Centre Station (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "71",
+     "long": "Wong Chuk Hang - Central (Rumsey Street) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "90B",
+     "long": "South Horizons - Admiralty Station (East) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "91",
+     "long": "Ap Lei Chau Estate - Central (Ferry Piers) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "103",
+     "long": "Chuk Yuen Estate - Pokfield Rd (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "970",
+     "long": "Cyberport - So Uk Estate (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "970X",
+     "long": "Cheung Sha Wan (Kom Tsun Street) - Aberdeen (Via Wah Fu) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "973",
+     "long": "Tsim Sha Tsui East (Mody Road) - Stanley (Via West Kowloon Cultural District) (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "330",
+   "code": "",
+   "name": "Pokfield Road",
+   "lat": 22.28166,
+   "lon": 114.13233,
+   "routes": [
+    {
+     "short": "23",
+     "long": "North Point Ferry - Pokfield Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "23X",
+     "long": "Pokfield Road - Sai Wan Ho (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "103",
+     "long": "Chuk Yuen Estate - Pokfield Rd (Kowloon Motor Bus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "331",
+   "code": "",
+   "name": "Pok Fu Lam Road Playground, Pok Fu Lam Road",
+   "lat": 22.27825,
+   "lon": 114.13113,
+   "routes": [
+    {
+     "short": "3A",
+     "long": "Central (Star Ferry) - Felix Villas (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "4",
+     "long": "Central - Wong Chuk Hang (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "4X",
+     "long": "Sheung Wan - Wah Fu (South) (Via Rumsey Street Flyover) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "7",
+     "long": "Shek Pai Wan - Central (Ferry Piers) (Via Chi Fu Fa Yuen) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "37A",
+     "long": "Chi Fu Fa Yuen - Admiralty (Circular) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "40",
+     "long": "Wah Fu (North) - Exhibition Centre Station (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "71",
+     "long": "Wong Chuk Hang - Central (Rumsey Street) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "90B",
+     "long": "South Horizons - Admiralty Station (East) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "91",
+     "long": "Ap Lei Chau Estate - Central (Ferry Piers) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "970",
+     "long": "Cyberport - So Uk Estate (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "970X",
+     "long": "Cheung Sha Wan (Kom Tsun Street) - Aberdeen (Via Wah Fu) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "973",
+     "long": "Tsim Sha Tsui East (Mody Road) - Stanley (Via West Kowloon Cultural District) (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "347",
+   "code": "",
+   "name": "Mount Davis Road, Pok Fu Lam Road",
+   "lat": 22.27833,
+   "lon": 114.13093,
+   "routes": [
+    {
+     "short": "3A",
+     "long": "Central (Star Ferry) - Felix Villas (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "4",
+     "long": "Wong Chuk Hang - Central (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "4X",
+     "long": "Wah Fu (South) - Central (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "7",
+     "long": "Shek Pai Wan - Central (Ferry Piers) (Via Chi Fu Fa Yuen) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "37B",
+     "long": "Chi Fu Fa Yuen - Admiralty (Circular) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "37X",
+     "long": "Chi Fu Fa Yuen - Admiralty (Circular) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "40",
+     "long": "Wah Fu (North) - Exhibition Centre Station (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "40M",
+     "long": "Wah Fu (North) - Exhibition Centre Station (Omit Chater Road) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "40P",
+     "long": "Aberdeen - Robinson Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "71",
+     "long": "Wong Chuk Hang - Central (Rumsey Street) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "71P",
+     "long": "Sham Wan Public Transport Terminus - Central (Central Ferry Piers) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "90B",
+     "long": "South Horizons - Admiralty Station (East) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "91",
+     "long": "Lei Tung Estate - Central (Ferry Piers) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "93",
+     "long": "South Horizons - Robinson Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "93A",
+     "long": "Lei Tung Estate - Robinson Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "93C",
+     "long": "Tin Wan Estate Bus Terminus - Caine Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "970",
+     "long": "Cyberport - Mong Kok (Bute Street) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "970X",
+     "long": "Aberdeen - Mong Kok (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "973",
+     "long": "Tsim Sha Tsui East (Mody Road) - Stanley (Via West Kowloon Cultural District) (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "348",
+   "code": "",
+   "name": "Pokfield Road, Pok Fu Lam Road",
+   "lat": 22.28215,
+   "lon": 114.13228,
+   "routes": [
+    {
+     "short": "3A",
+     "long": "Central (Star Ferry) - Felix Villas (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "4",
+     "long": "Wong Chuk Hang - Central (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "4X",
+     "long": "Wah Fu (South) - Central (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "7",
+     "long": "Shek Pai Wan - Central (Ferry Piers) (Via Chi Fu Fa Yuen) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "23",
+     "long": "North Point Ferry - Pokfield Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "23X",
+     "long": "Pokfield Road - Sai Wan Ho (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "33X",
+     "long": "Cyberport - Shau Kei Wan (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "37B",
+     "long": "Chi Fu Fa Yuen - Admiralty (Circular) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "37X",
+     "long": "Chi Fu Fa Yuen - Admiralty (Circular) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "40",
+     "long": "Wah Fu (North) - Exhibition Centre Station (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "40M",
+     "long": "Wah Fu (North) - Exhibition Centre Station (Omit Chater Road) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "40P",
+     "long": "Aberdeen - Robinson Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "71",
+     "long": "Wong Chuk Hang - Central (Rumsey Street) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "71P",
+     "long": "Sham Wan Public Transport Terminus - Central (Central Ferry Piers) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "90B",
+     "long": "South Horizons - Admiralty Station (East) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "91",
+     "long": "Lei Tung Estate - Central (Ferry Piers) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "93",
+     "long": "South Horizons - Robinson Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "93A",
+     "long": "Lei Tung Estate - Robinson Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "93C",
+     "long": "Tin Wan Estate Bus Terminus - Caine Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "103",
+     "long": "Chuk Yuen Estate - Pokfield Rd (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "970",
+     "long": "Cyberport - Mong Kok (Bute Street) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "970X",
+     "long": "Aberdeen - Mong Kok (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "973",
+     "long": "Tsim Sha Tsui East (Mody Road) - Stanley (Via West Kowloon Cultural District) (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "349",
+   "code": "",
+   "name": "Lady Ho Tung Hall, Pok Fu Lam Road",
+   "lat": 22.28362,
+   "lon": 114.13296,
+   "routes": [
+    {
+     "short": "3A",
+     "long": "Central (Star Ferry) - Felix Villas (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "4",
+     "long": "Wong Chuk Hang - Central (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "4X",
+     "long": "Wah Fu (South) - Central (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "7",
+     "long": "Shek Pai Wan - Central (Ferry Piers) (Via Chi Fu Fa Yuen) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "23",
+     "long": "North Point Ferry - Pokfield Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "23X",
+     "long": "Pokfield Road - Sai Wan Ho (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "33X",
+     "long": "Cyberport - Shau Kei Wan (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "37B",
+     "long": "Chi Fu Fa Yuen - Admiralty (Circular) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "37X",
+     "long": "Chi Fu Fa Yuen - Admiralty (Circular) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "40",
+     "long": "Wah Fu (North) - Exhibition Centre Station (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "40M",
+     "long": "Wah Fu (North) - Exhibition Centre Station (Omit Chater Road) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "40P",
+     "long": "Aberdeen - Robinson Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "71",
+     "long": "Wong Chuk Hang - Central (Rumsey Street) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "71P",
+     "long": "Sham Wan Public Transport Terminus - Central (Central Ferry Piers) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "90B",
+     "long": "South Horizons - Admiralty Station (East) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "91",
+     "long": "Lei Tung Estate - Central (Ferry Piers) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "93",
+     "long": "South Horizons - Robinson Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "93A",
+     "long": "Lei Tung Estate - Robinson Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "93C",
+     "long": "Tin Wan Estate Bus Terminus - Caine Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "103",
+     "long": "Chuk Yuen Estate - Pokfield Rd (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "970",
+     "long": "Cyberport - Mong Kok (Bute Street) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "970X",
+     "long": "Aberdeen - Mong Kok (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "973",
+     "long": "Tsim Sha Tsui East (Mody Road) - Stanley (Via West Kowloon Cultural District) (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "350",
+   "code": "",
+   "name": "HKU Centennial Campus, Pok Fu Lam Road",
+   "lat": 22.28434,
+   "lon": 114.13481,
+   "routes": [
+    {
+     "short": "3A",
+     "long": "Central (Star Ferry) - Felix Villas (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "4",
+     "long": "Wong Chuk Hang - Central (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "4X",
+     "long": "Wah Fu (South) - Central (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "7",
+     "long": "Shek Pai Wan - Central (Ferry Piers) (Via Chi Fu Fa Yuen) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "30X",
+     "long": "Cyberport - Admiralty (East) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "33X",
+     "long": "Cyberport - Shau Kei Wan (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "37B",
+     "long": "Chi Fu Fa Yuen - Admiralty (Circular) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "37X",
+     "long": "Chi Fu Fa Yuen - Admiralty (Circular) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "71",
+     "long": "Wong Chuk Hang - Central (Rumsey Street) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "71P",
+     "long": "Sham Wan Public Transport Terminus - Central (Central Ferry Piers) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "90B",
+     "long": "South Horizons - Admiralty Station (East) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "91",
+     "long": "Lei Tung Estate - Central (Ferry Piers) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "970",
+     "long": "Cyberport - Mong Kok (Bute Street) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "970X",
+     "long": "Aberdeen - Mong Kok (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "973",
+     "long": "Tsim Sha Tsui East (Mody Road) - Stanley (Via West Kowloon Cultural District) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "H4",
+     "long": "Stanley Village / Stanley Market - Hong Kong Observation Wheel / Central (Star Ferry) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "X970",
+     "long": "South Horizons - Cheung Sha Wan (Kom Tsun Street) (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "351",
+   "code": "",
+   "name": "St. Stephen's Church College, Pok Fu Lam Road",
+   "lat": 22.28527,
+   "lon": 114.13844,
+   "routes": [
+    {
+     "short": "3A",
+     "long": "Central (Star Ferry) - Felix Villas (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "4",
+     "long": "Wong Chuk Hang - Central (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "7",
+     "long": "Shek Pai Wan - Central (Ferry Piers) (Via Chi Fu Fa Yuen) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "37B",
+     "long": "Chi Fu Fa Yuen - Admiralty (Circular) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "71",
+     "long": "Wong Chuk Hang - Central (Rumsey Street) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "71P",
+     "long": "Sham Wan Public Transport Terminus - Central (Central Ferry Piers) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "91",
+     "long": "Lei Tung Estate - Central (Ferry Piers) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "970",
+     "long": "Cyberport - Mong Kok (Bute Street) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "973",
+     "long": "Tsim Sha Tsui East (Mody Road) - Stanley (Via West Kowloon Cultural District) (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "352",
+   "code": "",
+   "name": "Second Street",
+   "lat": 22.2862,
+   "lon": 114.13957,
+   "routes": [
+    {
+     "short": "3A",
+     "long": "Central (Star Ferry) - Felix Villas (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "4",
+     "long": "Wong Chuk Hang - Central (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "7",
+     "long": "Shek Pai Wan - Central (Ferry Piers) (Via Chi Fu Fa Yuen) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "37B",
+     "long": "Chi Fu Fa Yuen - Admiralty (Circular) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "71",
+     "long": "Wong Chuk Hang - Central (Rumsey Street) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "71P",
+     "long": "Sham Wan Public Transport Terminus - Central (Central Ferry Piers) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "91",
+     "long": "Lei Tung Estate - Central (Ferry Piers) (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "377",
+   "code": "",
+   "name": "King's College, Bonham Road",
+   "lat": 22.28425,
+   "lon": 114.13983,
+   "routes": [
+    {
+     "short": "23",
+     "long": "North Point Ferry - Pokfield Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "23X",
+     "long": "Pokfield Road - Sai Wan Ho (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "40",
+     "long": "Wah Fu (North) - Exhibition Centre Station (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "40M",
+     "long": "Wah Fu (North) - Exhibition Centre Station (Omit Chater Road) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "40P",
+     "long": "Aberdeen - Robinson Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "93",
+     "long": "South Horizons - Robinson Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "93A",
+     "long": "Lei Tung Estate - Robinson Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "93C",
+     "long": "Tin Wan Estate Bus Terminus - Caine Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "103",
+     "long": "Chuk Yuen Estate - Pokfield Rd (Kowloon Motor Bus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "378",
+   "code": "",
+   "name": "Ning Yeung Terrace, Bonham Road",
+   "lat": 22.28486,
+   "lon": 114.14125,
+   "routes": [
+    {
+     "short": "23",
+     "long": "North Point Ferry - Pokfield Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "23X",
+     "long": "Pokfield Road - Sai Wan Ho (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "40",
+     "long": "Wah Fu (North) - Exhibition Centre Station (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "40M",
+     "long": "Wah Fu (North) - Exhibition Centre Station (Omit Chater Road) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "40P",
+     "long": "Aberdeen - Robinson Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "93",
+     "long": "South Horizons - Robinson Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "93A",
+     "long": "Lei Tung Estate - Robinson Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "93C",
+     "long": "Tin Wan Estate Bus Terminus - Caine Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "103",
+     "long": "Chuk Yuen Estate - Pokfield Rd (Kowloon Motor Bus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "380",
+   "code": "",
+   "name": "Centre Street, Bonham Road",
+   "lat": 22.28443,
+   "lon": 114.14218,
+   "routes": [
+    {
+     "short": "23",
+     "long": "North Point Ferry - Pokfield Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "40",
+     "long": "Wah Fu (North) - Exhibition Centre Station (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "103",
+     "long": "Chuk Yuen Estate - Pokfield Rd (Kowloon Motor Bus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "381",
+   "code": "",
+   "name": "HKU East Gate, Bonham Road",
+   "lat": 22.28407,
+   "lon": 114.1386,
+   "routes": [
+    {
+     "short": "23",
+     "long": "North Point Ferry - Pokfield Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "40",
+     "long": "Wah Fu (North) - Exhibition Centre Station (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "103",
+     "long": "Chuk Yuen Estate - Pokfield Rd (Kowloon Motor Bus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "382",
+   "code": "",
+   "name": "Yat Fu Lane, Queen's Road West",
+   "lat": 22.28638,
+   "lon": 114.13371,
+   "routes": [
+    {
+     "short": "10",
+     "long": "North Point Ferry Pier - Kennedy Town (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "101",
+     "long": "Mok Cheong Street - Kennedy Town (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "101X",
+     "long": "Kwun Tong (Yue Man Square) - Kennedy Town (Via Kowloon Bay Business Area) (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "104",
+     "long": "Kennedy Town - Sham Shui Po (Pak Tin Estate) (Kowloon Motor Bus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "384",
+   "code": "",
+   "name": "Hill Road, Des Voeux Road West",
+   "lat": 22.28721,
+   "lon": 114.13431,
+   "routes": [
+    {
+     "short": "5B",
+     "long": "Kennedy Town - Causeway Bay (Omit Chater Road) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "5X",
+     "long": "Kennedy Town - Causeway Bay (Whitfield Road) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "10",
+     "long": "North Point Ferry Pier - Kennedy Town (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "18",
+     "long": "North Point (Healthy Street Central) - Kennedy Town (Belcher Bay) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "18P",
+     "long": "Kennedy Town (Belcher Bay) - North Point (Healthy Street Central) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "18X",
+     "long": "Shau Kei Wan - Kennedy Town (Belcher Bay) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "88X",
+     "long": "Siu Sai Wan (Island Resort) - Kennedy Town (Belcher Bay) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "101",
+     "long": "Kwun Tong (Yue Man Square) - Kennedy Town (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "101X",
+     "long": "Kennedy Town - Kwun Tong (Yue Man Square) (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "104",
+     "long": "Kennedy Town - Sham Shui Po (Pak Tin Estate) (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "113",
+     "long": "Choi Hung - Kennedy Town (Belcher Bay) (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "904",
+     "long": "Lai Chi Kok - Kennedy Town (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "971",
+     "long": "Aberdeen (Shek Pai Wan) - Hoi Lai Estate (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "A10",
+     "long": "Ap Lei Chau (Lee Lok Street) - Airport (Ground Transportation Centre) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "N8X",
+     "long": "Siu Sai Wan (Island Resort) - Kennedy Town (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "NA10",
+     "long": "Ap Lei Chau (Lee Lok Street) - Airport / Hzmb Hong Kong Port (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "385",
+   "code": "",
+   "name": "Ka on Street, Des Voeux Road West",
+   "lat": 22.28709,
+   "lon": 114.13719,
+   "routes": [
+    {
+     "short": "5B",
+     "long": "Kennedy Town - Causeway Bay (Omit Chater Road) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "5X",
+     "long": "Kennedy Town - Causeway Bay (Whitfield Road) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "10",
+     "long": "North Point Ferry Pier - Kennedy Town (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "18",
+     "long": "North Point (Healthy Street Central) - Kennedy Town (Belcher Bay) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "18P",
+     "long": "Kennedy Town (Belcher Bay) - North Point (Healthy Street Central) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "18X",
+     "long": "Shau Kei Wan - Kennedy Town (Belcher Bay) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "88X",
+     "long": "Siu Sai Wan (Island Resort) - Kennedy Town (Belcher Bay) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "A12",
+     "long": "Airport - Siu Sai Wan (Island Resort) (Via West Point) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "N8X",
+     "long": "Siu Sai Wan (Island Resort) - Kennedy Town (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "NA12",
+     "long": "Hzmb Hong Kong Port - Heng Fa Chuen (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "392",
+   "code": "",
+   "name": "Sands Street, Belcher's Street",
+   "lat": 22.28363,
+   "lon": 114.13065,
+   "routes": [
+    {
+     "short": "5X",
+     "long": "Causeway Bay (Whitfield Road) - Kennedy Town (Omit Ice House Street) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "10",
+     "long": "North Point Ferry Pier - Kennedy Town (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "101",
+     "long": "Mok Cheong Street - Kennedy Town (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "101X",
+     "long": "Kwun Tong (Yue Man Square) - Kennedy Town (Via Kowloon Bay Business Area) (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "104",
+     "long": "Kennedy Town - Sham Shui Po (Pak Tin Estate) (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "A10",
+     "long": "Ap Lei Chau (Lee Lok Street) - Airport (Ground Transportation Centre) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "NA10",
+     "long": "Ap Lei Chau (Lee Lok Street) - Airport / Hzmb Hong Kong Port (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "393",
+   "code": "",
+   "name": "Luen Bong Apartment, Belcher's Street",
+   "lat": 22.28247,
+   "lon": 114.12773,
+   "routes": [
+    {
+     "short": "5B",
+     "long": "Causeway Bay (Tung Lo Wan Road) - Felix Villas (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "5X",
+     "long": "Causeway Bay (Whitfield Road) - Kennedy Town (Omit Ice House Street) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "10",
+     "long": "North Point Ferry Pier - Kennedy Town (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "18X",
+     "long": "Shau Kei Wan - Kennedy Town (Belcher Bay) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "88X",
+     "long": "Siu Sai Wan (Island Resort) - Kennedy Town (Belcher Bay) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "101",
+     "long": "Mok Cheong Street - Kennedy Town (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "101X",
+     "long": "Kwun Tong (Yue Man Square) - Kennedy Town (Via Kowloon Bay Business Area) (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "104",
+     "long": "Kennedy Town - Sham Shui Po (Pak Tin Estate) (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "113",
+     "long": "Choi Hung - Kennedy Town (Belcher Bay) (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "904",
+     "long": "Lai Chi Kok - Kennedy Town (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "971",
+     "long": "Aberdeen (Shek Pai Wan) - Hoi Lai Estate (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "A10",
+     "long": "Ap Lei Chau (Lee Lok Street) - Airport (Ground Transportation Centre) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "N8X",
+     "long": "Siu Sai Wan (Island Resort) - Kennedy Town (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "NA10",
+     "long": "Ap Lei Chau (Lee Lok Street) - Airport / Hzmb Hong Kong Port (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "398",
+   "code": "",
+   "name": "Belcher Bay Park, Kennedy Town Praya",
+   "lat": 22.28433,
+   "lon": 114.13017,
+   "routes": [
+    {
+     "short": "5B",
+     "long": "Kennedy Town - Causeway Bay (Omit Chater Road) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "5X",
+     "long": "Kennedy Town - Causeway Bay (Whitfield Road) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "10",
+     "long": "North Point Ferry Pier - Kennedy Town (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "N8X",
+     "long": "Siu Sai Wan (Island Resort) - Kennedy Town (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "399",
+   "code": "",
+   "name": "Sai Cheung Street, Kennedy Town Praya",
+   "lat": 22.28507,
+   "lon": 114.13105,
+   "routes": [
+    {
+     "short": "5X",
+     "long": "Kennedy Town - Causeway Bay (Whitfield Road) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "10",
+     "long": "North Point Ferry Pier - Kennedy Town (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "18",
+     "long": "North Point (Healthy Street Central) - Kennedy Town (Belcher Bay) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "18P",
+     "long": "Kennedy Town (Belcher Bay) - North Point (Healthy Street Central) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "18X",
+     "long": "Shau Kei Wan - Kennedy Town (Belcher Bay) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "47P",
+     "long": "Wong Chuk Hang - Kennedy Town (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "88X",
+     "long": "Siu Sai Wan (Island Resort) - Kennedy Town (Belcher Bay) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "101",
+     "long": "Kwun Tong (Yue Man Square) - Kennedy Town (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "101X",
+     "long": "Kennedy Town - Kwun Tong (Yue Man Square) (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "104",
+     "long": "Kennedy Town - Sham Shui Po (Pak Tin Estate) (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "904",
+     "long": "Lai Chi Kok - Kennedy Town (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "971",
+     "long": "Aberdeen (Shek Pai Wan) - Hoi Lai Estate (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "A10",
+     "long": "Ap Lei Chau (Lee Lok Street) - Airport (Ground Transportation Centre) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "NA10",
+     "long": "Ap Lei Chau (Lee Lok Street) - Airport / Hzmb Hong Kong Port (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "400",
+   "code": "",
+   "name": "Collinson Street, Kennedy Town Praya",
+   "lat": 22.2863,
+   "lon": 114.13198,
+   "routes": [
+    {
+     "short": "5B",
+     "long": "Kennedy Town - Causeway Bay (Omit Chater Road) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "5X",
+     "long": "Kennedy Town - Causeway Bay (Whitfield Road) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "10",
+     "long": "North Point Ferry Pier - Kennedy Town (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "18",
+     "long": "North Point (Healthy Street Central) - Kennedy Town (Belcher Bay) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "18P",
+     "long": "Kennedy Town (Belcher Bay) - North Point (Healthy Street Central) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "18X",
+     "long": "Shau Kei Wan - Kennedy Town (Belcher Bay) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "88X",
+     "long": "Siu Sai Wan (Island Resort) - Kennedy Town (Belcher Bay) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "A10",
+     "long": "Ap Lei Chau (Lee Lok Street) - Airport (Ground Transportation Centre) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "N8X",
+     "long": "Siu Sai Wan (Island Resort) - Kennedy Town (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "NA10",
+     "long": "Ap Lei Chau (Lee Lok Street) - Airport / Hzmb Hong Kong Port (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "612",
+   "code": "",
+   "name": "Chiu Kwong Street, Queen's Road West",
+   "lat": 22.28675,
+   "lon": 114.13968,
+   "routes": [
+    {
+     "short": "10",
+     "long": "North Point Ferry Pier - Kennedy Town (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "101",
+     "long": "Mok Cheong Street - Kennedy Town (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "101X",
+     "long": "Kwun Tong (Yue Man Square) - Kennedy Town (Via Kowloon Bay Business Area) (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "104",
+     "long": "Kennedy Town - Sham Shui Po (Pak Tin Estate) (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "A10",
+     "long": "Ap Lei Chau (Lee Lok Street) - Airport (Ground Transportation Centre) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "NA10",
+     "long": "Ap Lei Chau (Lee Lok Street) - Airport / Hzmb Hong Kong Port (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "613",
+   "code": "",
+   "name": "Shek Tong Tsui Complex, Queen's Road West",
+   "lat": 22.28603,
+   "lon": 114.13533,
+   "routes": [
+    {
+     "short": "10",
+     "long": "North Point Ferry Pier - Kennedy Town (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "101",
+     "long": "Mok Cheong Street - Kennedy Town (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "101X",
+     "long": "Kwun Tong (Yue Man Square) - Kennedy Town (Via Kowloon Bay Business Area) (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "104",
+     "long": "Kennedy Town - Sham Shui Po (Pak Tin Estate) (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "A10",
+     "long": "Ap Lei Chau (Lee Lok Street) - Airport (Ground Transportation Centre) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "NA10",
+     "long": "Ap Lei Chau (Lee Lok Street) - Airport / Hzmb Hong Kong Port (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "626",
+   "code": "",
+   "name": "Water Street, Des Voeux Road West",
+   "lat": 22.28717,
+   "lon": 114.1381,
+   "routes": [
+    {
+     "short": "5B",
+     "long": "Causeway Bay (Tung Lo Wan Road) - Felix Villas (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "113",
+     "long": "Choi Hung - Kennedy Town (Belcher Bay) (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "905",
+     "long": "Lai Chi Kok - Exhibition Centre Station (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "905A",
+     "long": "Exhibition Centre Station - Lai Chi Kok (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "N8X",
+     "long": "Siu Sai Wan (Island Resort) - Kennedy Town (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "627",
+   "code": "",
+   "name": "Hill Road, Des Voeux Road West",
+   "lat": 22.28663,
+   "lon": 114.13614,
+   "routes": [
+    {
+     "short": "5B",
+     "long": "Causeway Bay (Tung Lo Wan Road) - Felix Villas (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "18",
+     "long": "North Point (Healthy Street Central) - Kennedy Town (Belcher Bay) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "18P",
+     "long": "Kennedy Town (Belcher Bay) - North Point (Healthy Street Central) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "18X",
+     "long": "Chai Wan Station - Kennedy Town(Belcher Bay) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "88X",
+     "long": "Siu Sai Wan (Island Resort) - Kennedy Town (Belcher Bay) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "113",
+     "long": "Choi Hung - Kennedy Town (Belcher Bay) (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "904",
+     "long": "Lai Chi Kok - Kennedy Town (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "905",
+     "long": "Lai Chi Kok - Exhibition Centre Station (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "905A",
+     "long": "Exhibition Centre Station - Lai Chi Kok (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "930A",
+     "long": "Fleming Road - Tsuen Wan (Discovery Park) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "971",
+     "long": "Aberdeen (Shek Pai Wan) - Hoi Lai Estate (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "N8X",
+     "long": "Siu Sai Wan (Island Resort) - Kennedy Town (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "628",
+   "code": "",
+   "name": "Kennedy Town Swimming Pool, Kennedy Town Praya",
+   "lat": 22.2855,
+   "lon": 114.13176,
+   "routes": [
+    {
+     "short": "5B",
+     "long": "Causeway Bay (Tung Lo Wan Road) - Felix Villas (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "18",
+     "long": "North Point (Healthy Street Central) - Kennedy Town (Belcher Bay) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "18P",
+     "long": "Kennedy Town (Belcher Bay) - North Point (Healthy Street Central) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "18X",
+     "long": "Chai Wan Station - Kennedy Town(Belcher Bay) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "88X",
+     "long": "Siu Sai Wan (Island Resort) - Kennedy Town (Belcher Bay) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "113",
+     "long": "Choi Hung - Kennedy Town (Belcher Bay) (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "904",
+     "long": "Lai Chi Kok - Kennedy Town (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "971",
+     "long": "Aberdeen (Shek Pai Wan) - Hoi Lai Estate (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "N8X",
+     "long": "Siu Sai Wan (Island Resort) - Kennedy Town (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "629",
+   "code": "",
+   "name": "Sands Street, Kennedy Town Praya",
+   "lat": 22.28424,
+   "lon": 114.13028,
+   "routes": [
+    {
+     "short": "5B",
+     "long": "Causeway Bay (Tung Lo Wan Road) - Felix Villas (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "18",
+     "long": "North Point (Healthy Street Central) - Kennedy Town (Belcher Bay) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "18P",
+     "long": "Kennedy Town (Belcher Bay) - North Point (Healthy Street Central) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "18X",
+     "long": "Chai Wan Station - Kennedy Town(Belcher Bay) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "88X",
+     "long": "Siu Sai Wan (Island Resort) - Kennedy Town (Belcher Bay) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "113",
+     "long": "Choi Hung - Kennedy Town (Belcher Bay) (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "904",
+     "long": "Lai Chi Kok - Kennedy Town (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "971",
+     "long": "Aberdeen (Shek Pai Wan) - Hoi Lai Estate (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "N8X",
+     "long": "Siu Sai Wan (Island Resort) - Kennedy Town (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "637",
+   "code": "",
+   "name": "The Westwood, Belcher's Street",
+   "lat": 22.28627,
+   "lon": 114.13272,
+   "routes": [
+    {
+     "short": "10",
+     "long": "North Point Ferry Pier - Kennedy Town (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "A10",
+     "long": "Ap Lei Chau (Lee Lok Street) - Airport (Ground Transportation Centre) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "NA10",
+     "long": "Ap Lei Chau (Lee Lok Street) - Airport / Hzmb Hong Kong Port (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "1487",
+   "code": "",
+   "name": "Fulham Garden, Pok Fu Lam Road",
+   "lat": 22.28004,
+   "lon": 114.1313,
+   "routes": [
+    {
+     "short": "3A",
+     "long": "Central (Star Ferry) - Felix Villas (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "4",
+     "long": "Wong Chuk Hang - Central (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "4X",
+     "long": "Wah Fu (South) - Central (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "7",
+     "long": "Shek Pai Wan - Central (Ferry Piers) (Via Chi Fu Fa Yuen) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "37B",
+     "long": "Chi Fu Fa Yuen - Admiralty (Circular) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "37X",
+     "long": "Chi Fu Fa Yuen - Admiralty (Circular) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "40",
+     "long": "Wah Fu (North) - Exhibition Centre Station (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "40M",
+     "long": "Wah Fu (North) - Exhibition Centre Station (Omit Chater Road) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "40P",
+     "long": "Aberdeen - Robinson Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "71",
+     "long": "Wong Chuk Hang - Central (Rumsey Street) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "71P",
+     "long": "Sham Wan Public Transport Terminus - Central (Central Ferry Piers) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "90B",
+     "long": "South Horizons - Admiralty Station (East) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "91",
+     "long": "Lei Tung Estate - Central (Ferry Piers) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "93",
+     "long": "South Horizons - Robinson Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "93A",
+     "long": "Lei Tung Estate - Robinson Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "93C",
+     "long": "Tin Wan Estate Bus Terminus - Caine Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "970",
+     "long": "Cyberport - Mong Kok (Bute Street) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "970X",
+     "long": "Aberdeen - Mong Kok (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "973",
+     "long": "Tsim Sha Tsui East (Mody Road) - Stanley (Via West Kowloon Cultural District) (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "1489",
+   "code": "",
+   "name": "Sai Ying Pun Post Office, Pok Fu Lam Road",
+   "lat": 22.28595,
+   "lon": 114.13992,
+   "routes": [
+    {
+     "short": "970",
+     "long": "Cyberport - Mong Kok (Bute Street) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "973",
+     "long": "Tsim Sha Tsui East (Mody Road) - Stanley (Via West Kowloon Cultural District) (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "3025",
+   "code": "",
+   "name": "North Street, Belcher's Street",
+   "lat": 22.28264,
+   "lon": 114.12871,
+   "routes": [
+    {
+     "short": "18",
+     "long": "North Point (Healthy Street Central) - Kennedy Town (Belcher Bay) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "18P",
+     "long": "Kennedy Town (Belcher Bay) - North Point (Healthy Street Central) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "18X",
+     "long": "Chai Wan Station - Kennedy Town(Belcher Bay) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "904",
+     "long": "Lai Chi Kok - Kennedy Town (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "971",
+     "long": "Aberdeen (Shek Pai Wan) - Hoi Lai Estate (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "A10",
+     "long": "Ap Lei Chau (Lee Lok Street) - Airport (Ground Transportation Centre) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "NA10",
+     "long": "Ap Lei Chau (Lee Lok Street) - Airport / Hzmb Hong Kong Port (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "3027",
+   "code": "",
+   "name": "Belcher Bay",
+   "lat": 22.28449,
+   "lon": 114.12842,
+   "routes": [
+    {
+     "short": "18",
+     "long": "North Point (Healthy Street Central) - Kennedy Town (Belcher Bay) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "18P",
+     "long": "Kennedy Town (Belcher Bay) - North Point (Healthy Street Central) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "18X",
+     "long": "Chai Wan Station - Kennedy Town(Belcher Bay) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "88X",
+     "long": "Siu Sai Wan (Island Resort) - Kennedy Town (Belcher Bay) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "113",
+     "long": "Choi Hung - Kennedy Town (Belcher Bay) (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "904",
+     "long": "Lai Chi Kok - Kennedy Town (Kowloon Motor Bus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "3028",
+   "code": "",
+   "name": "Holland Street",
+   "lat": 22.28445,
+   "lon": 114.13078,
+   "routes": [
+    {
+     "short": "18",
+     "long": "North Point (Healthy Street Central) - Kennedy Town (Belcher Bay) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "18P",
+     "long": "Kennedy Town (Belcher Bay) - North Point (Healthy Street Central) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "113",
+     "long": "Choi Hung - Kennedy Town (Belcher Bay) (Kowloon Motor Bus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "3116",
+   "code": "",
+   "name": "Chiu Sheung School Hong Kong, Pok Fu Lam Road",
+   "lat": 22.28361,
+   "lon": 114.13608,
+   "routes": [
+    {
+     "short": "23",
+     "long": "North Point Ferry - Pokfield Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "23X",
+     "long": "Pokfield Road - Sai Wan Ho (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "40",
+     "long": "Wah Fu (North) - Exhibition Centre Station (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "40M",
+     "long": "Wah Fu (North) - Exhibition Centre Station (Omit Chater Road) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "40P",
+     "long": "Aberdeen - Robinson Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "93",
+     "long": "South Horizons - Robinson Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "93A",
+     "long": "Lei Tung Estate - Robinson Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "93C",
+     "long": "Tin Wan Estate Bus Terminus - Caine Road (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "103",
+     "long": "Chuk Yuen Estate - Pokfield Rd (Kowloon Motor Bus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "3185",
+   "code": "",
+   "name": "Pokfield Road, Pok Fu Lam Road",
+   "lat": 22.28196,
+   "lon": 114.13247,
+   "routes": [
+    {
+     "short": "3A",
+     "long": "Central (Star Ferry) - Felix Villas (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "4",
+     "long": "Central - Wong Chuk Hang (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "4X",
+     "long": "Sheung Wan - Wah Fu (South) (Via Rumsey Street Flyover) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "7",
+     "long": "Shek Pai Wan - Central (Ferry Piers) (Via Chi Fu Fa Yuen) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "30X",
+     "long": "Central (Exchange Square) - Cyberport (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "33X",
+     "long": "Shau Kei Wan - Cyberport (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "37A",
+     "long": "Chi Fu Fa Yuen - Admiralty (Circular) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "40",
+     "long": "Wah Fu (North) - Exhibition Centre Station (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "71",
+     "long": "Wong Chuk Hang - Central (Rumsey Street) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "90B",
+     "long": "South Horizons - Admiralty Station (East) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "91",
+     "long": "Ap Lei Chau Estate - Central (Ferry Piers) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "970",
+     "long": "Cyberport - So Uk Estate (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "970X",
+     "long": "Cheung Sha Wan (Kom Tsun Street) - Aberdeen (Via Wah Fu) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "973",
+     "long": "Tsim Sha Tsui East (Mody Road) - Stanley (Via West Kowloon Cultural District) (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "8015",
+   "code": "",
+   "name": "Water Street",
+   "lat": 22.28777,
+   "lon": 114.13864,
+   "routes": [
+    {
+     "short": "5X",
+     "long": "Kennedy Town - Causeway Bay (Whitfield Road) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "18",
+     "long": "North Point (Healthy Street Central) - Kennedy Town (Belcher Bay) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "970",
+     "long": "Cyberport - Mong Kok (Bute Street) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "971",
+     "long": "Aberdeen (Shek Pai Wan) - Hoi Lai Estate (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "973",
+     "long": "Tsim Sha Tsui East (Mody Road) - Stanley (Via West Kowloon Cultural District) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "A10",
+     "long": "Ap Lei Chau (Lee Lok Street) - Airport (Ground Transportation Centre) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "A12",
+     "long": "Airport - Siu Sai Wan (Island Resort) (Via West Point) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "NA10",
+     "long": "Ap Lei Chau (Lee Lok Street) - Airport / Hzmb Hong Kong Port (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "NA12",
+     "long": "Hzmb Hong Kong Port - Heng Fa Chuen (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "8016",
+   "code": "",
+   "name": "Kwan Yick Building Phase Ii, Des Voeux Road West",
+   "lat": 22.28726,
+   "lon": 114.13781,
+   "routes": [
+    {
+     "short": "101",
+     "long": "Kwun Tong (Yue Man Square) - Kennedy Town (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "101X",
+     "long": "Kennedy Town - Kwun Tong (Yue Man Square) (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "104",
+     "long": "Kennedy Town - Sham Shui Po (Pak Tin Estate) (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "113",
+     "long": "Choi Hung - Kennedy Town (Belcher Bay) (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "904",
+     "long": "Lai Chi Kok - Kennedy Town (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "905",
+     "long": "Lai Chi Kok - Exhibition Centre Station (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "905P",
+     "long": "Lai Chi Kok - Wan Chai (Harbour Road) (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "971",
+     "long": "Aberdeen (Shek Pai Wan) - Hoi Lai Estate (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "A10",
+     "long": "Ap Lei Chau (Lee Lok Street) - Airport (Ground Transportation Centre) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "A12",
+     "long": "Siu Sai Wan (Island Resort) - Airport (Via West Point/Cathay City / Cad Headquarters) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "NA10",
+     "long": "Ap Lei Chau (Lee Lok Street) - Airport / Hzmb Hong Kong Port (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "NA12",
+     "long": "Heng Fa Chuen - Hzmb Hong Kong Port (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "8017",
+   "code": "",
+   "name": "Kennedy Town Swimming Pool Sitting-Out Area, Des Voeux Road West",
+   "lat": 22.28709,
+   "lon": 114.13247,
+   "routes": [
+    {
+     "short": "5B",
+     "long": "Kennedy Town - Causeway Bay (Omit Chater Road) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "5X",
+     "long": "Kennedy Town - Causeway Bay (Whitfield Road) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "10",
+     "long": "North Point Ferry Pier - Kennedy Town (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "18",
+     "long": "North Point (Healthy Street Central) - Kennedy Town (Belcher Bay) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "18P",
+     "long": "Kennedy Town (Belcher Bay) - North Point (Healthy Street Central) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "18X",
+     "long": "Shau Kei Wan - Kennedy Town (Belcher Bay) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "88X",
+     "long": "Siu Sai Wan (Island Resort) - Kennedy Town (Belcher Bay) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "101",
+     "long": "Kwun Tong (Yue Man Square) - Kennedy Town (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "101X",
+     "long": "Kennedy Town - Kwun Tong (Yue Man Square) (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "104",
+     "long": "Kennedy Town - Sham Shui Po (Pak Tin Estate) (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "113",
+     "long": "Choi Hung - Kennedy Town (Belcher Bay) (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "904",
+     "long": "Lai Chi Kok - Kennedy Town (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "971",
+     "long": "Aberdeen (Shek Pai Wan) - Hoi Lai Estate (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "A10",
+     "long": "Ap Lei Chau (Lee Lok Street) - Airport (Ground Transportation Centre) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "N8X",
+     "long": "Siu Sai Wan (Island Resort) - Kennedy Town (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "NA10",
+     "long": "Ap Lei Chau (Lee Lok Street) - Airport / Hzmb Hong Kong Port (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "10300",
+   "code": "",
+   "name": "Alpine Court, Kotewall Road",
+   "lat": 22.28177,
+   "lon": 114.14211,
+   "routes": [
+    {
+     "short": "13",
+     "long": "Admiralty (Tamar Street) - Kotewall Road (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "10301",
+   "code": "",
+   "name": "Alpine Court, Kotewall Road",
+   "lat": 22.28192,
+   "lon": 114.14223,
+   "routes": [
+    {
+     "short": "13",
+     "long": "Kotewall Road - Admiralty (Tamar Street) (Omit Ice House St) (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "12522",
+   "code": "",
+   "name": "Kotewall Road",
+   "lat": 22.28122,
+   "lon": 114.14005,
+   "routes": [
+    {
+     "short": "13",
+     "long": "Kotewall Road - Admiralty (Tamar Street) (Omit Ice House St) (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "12524",
+   "code": "",
+   "name": "Hatton Road, Kotewall Road",
+   "lat": 22.28105,
+   "lon": 114.14009,
+   "routes": [
+    {
+     "short": "13",
+     "long": "Admiralty (Tamar Street) - Kotewall Road (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "12529",
+   "code": "",
+   "name": "Sai Cheung Street",
+   "lat": 22.28489,
+   "lon": 114.13187,
+   "routes": [
+    {
+     "short": "5X",
+     "long": "Causeway Bay (Whitfield Road) - Kennedy Town (Omit Ice House Street) (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "10000306",
+   "code": "",
+   "name": "Smithfield, Catchick Street",
+   "lat": 22.28339,
+   "lon": 114.12844,
+   "routes": [
+    {
+     "short": "47P",
+     "long": "Wong Chuk Hang - Kennedy Town (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "101",
+     "long": "Kwun Tong (Yue Man Square) - Kennedy Town (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "101X",
+     "long": "Kennedy Town - Kwun Tong (Yue Man Square) (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "104",
+     "long": "Kennedy Town - Sham Shui Po (Pak Tin Estate) (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "904",
+     "long": "Lai Chi Kok - Kennedy Town (Kowloon Motor Bus)",
+     "mode": "bus"
+    },
+    {
+     "short": "971",
+     "long": "Aberdeen (Shek Pai Wan) - Hoi Lai Estate (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "A10",
+     "long": "Ap Lei Chau (Lee Lok Street) - Airport (Ground Transportation Centre) (Citybus)",
+     "mode": "bus"
+    },
+    {
+     "short": "NA10",
+     "long": "Ap Lei Chau (Lee Lok Street) - Airport / Hzmb Hong Kong Port (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "10000331",
+   "code": "",
+   "name": "Kennedy Town New Praya",
+   "lat": 22.2846,
+   "lon": 114.12837,
+   "routes": [
+    {
+     "short": "H4",
+     "long": "Stanley Village / Stanley Market - Hong Kong Observation Wheel / Central (Star Ferry) (Citybus)",
+     "mode": "bus"
+    }
+   ]
+  },
+  {
+   "id": "20000008",
+   "code": "",
+   "name": "Pok Fu Lam Road, West Gate of the University of Hong Kong",
+   "lat": 22.28345,
+   "lon": 114.13652,
+   "routes": [
+    {
+     "short": "8X",
+     "long": "Baguio Villas (Lower) - Central (Exchange Square)  (Express Service) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "10",
+     "long": "Causeway Bay (Jaffe Road) - Cyberport Public Transport Interchange (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "10P",
+     "long": "Jaffe Road, Near Siu on Plaza - Cyberport Bus Terminus (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "22",
+     "long": "Pok Fu Lam Gardens - Central (Exchange Square) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "22S",
+     "long": "Central (Central Ferry Piers) - Pok Fu Lam Gardens  (Special Departure) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "22X",
+     "long": "Pok Fu Lam Gardens - Central (Central Ferry Piers)  (Express Service) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "28",
+     "long": "Baguio Villa (Upper) - Causeway Bay (Sun Wui Road) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "28M",
+     "long": "Baguio Villa (Upper) - HKU Station (Circular) (Short Working Service) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "31",
+     "long": "Tin Wan Estate - Causeway Bay (Jaffe Road) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "55",
+     "long": "Queen Mary Hospital - Central Station (Connaught Road Central) (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "N31",
+     "long": "Tin Wan Estate - Causeway Bay (Jaffe Road)  (Overnight Service Departure) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20000009",
+   "code": "",
+   "name": "Pok Fu Lam Road, Opposite Lady Ho Tung Hall",
+   "lat": 22.28405,
+   "lon": 114.13369,
+   "routes": [
+    {
+     "short": "8X",
+     "long": "Baguio Villas (Lower) - Central (Exchange Square)  (Express Service) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "10",
+     "long": "Causeway Bay (Jaffe Road) - Cyberport Public Transport Interchange (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "10P",
+     "long": "Jaffe Road, Near Siu on Plaza - Cyberport Bus Terminus (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "22",
+     "long": "Pok Fu Lam Gardens - Central (Exchange Square) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "22S",
+     "long": "Central (Central Ferry Piers) - Pok Fu Lam Gardens  (Special Departure) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "22X",
+     "long": "Pok Fu Lam Gardens - Central (Central Ferry Piers)  (Express Service) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "28",
+     "long": "Baguio Villa (Upper) - Causeway Bay (Sun Wui Road) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "28M",
+     "long": "Baguio Villa (Upper) - HKU Station (Circular) (Short Working Service) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "31",
+     "long": "Tin Wan Estate - Causeway Bay (Jaffe Road) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "55",
+     "long": "Queen Mary Hospital - Central Station (Connaught Road Central) (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "N31",
+     "long": "Tin Wan Estate - Causeway Bay (Jaffe Road)  (Overnight Service Departure) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20000010",
+   "code": "",
+   "name": "Pokfield Road Bus Terminus, Pok Fu Lam Road",
+   "lat": 22.28207,
+   "lon": 114.13257,
+   "routes": [
+    {
+     "short": "22",
+     "long": "Pok Fu Lam Gardens - Central (Exchange Square) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "22S",
+     "long": "Central (Central Ferry Piers) - Pok Fu Lam Gardens  (Special Departure) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "22X",
+     "long": "Pok Fu Lam Gardens - Central (Central Ferry Piers)  (Express Service) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "55",
+     "long": "Queen Mary Hospital - Central Station (Connaught Road Central) (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20000012",
+   "code": "",
+   "name": "Pok Fu Lam Road, Outside the Belcher's",
+   "lat": 22.28422,
+   "lon": 114.13357,
+   "routes": [
+    {
+     "short": "13",
+     "long": "Sai Wan Estate - Sai Ying Pun (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "22",
+     "long": "Pok Fu Lam Gardens - Central (Exchange Square) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "22S",
+     "long": "Pok Fu Lam Gardens - Central (Central Ferry Piers)  (Special Departure) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "22X",
+     "long": "Pok Fu Lam Gardens - Central (Central Ferry Piers)  (Express Service (Via Yat Chee Villas) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "28",
+     "long": "Baguio Villa (Upper) - Causeway Bay (Sun Wui Road)  (Express Departures (Omits Bonham Road) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "28M",
+     "long": "Baguio Villa (Upper) - HKU Station (Circular) (Short Working Service) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "28S",
+     "long": "Baguio Villa (Upper) - Causeway Bay (Sun Wui Road)  (Short Working Service) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20000013",
+   "code": "",
+   "name": "Pok Fu Lam Road Western End of Bus Bay West of Hill Road Flyover",
+   "lat": 22.2844,
+   "lon": 114.13427,
+   "routes": [
+    {
+     "short": "22",
+     "long": "Pok Fu Lam Gardens - Central (Exchange Square) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "22S",
+     "long": "Pok Fu Lam Gardens - Central (Central Ferry Piers)  (Special Departure) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20000015",
+   "code": "",
+   "name": "Bonham Road, House No. 53",
+   "lat": 22.28486,
+   "lon": 114.1412,
+   "routes": [
+    {
+     "short": "8",
+     "long": "Baguio Villas (Lower) - Central (Exchange Square)  (Normal Route) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "10",
+     "long": "Causeway Bay (Jaffe Road) - Cyberport Public Transport Interchange (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "22",
+     "long": "Pok Fu Lam Gardens - Central (Exchange Square) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "22S",
+     "long": "Pok Fu Lam Gardens - Central (Central Ferry Piers)  (Special Departure) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "31",
+     "long": "Tin Wan Estate - Causeway Bay (Jaffe Road) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "N31",
+     "long": "Tin Wan Estate - Causeway Bay (Jaffe Road)  (Overnight Service Departure) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20000072",
+   "code": "",
+   "name": "No.79 Pok Fu Lam Road",
+   "lat": 22.28366,
+   "lon": 114.13595,
+   "routes": [
+    {
+     "short": "8",
+     "long": "Baguio Villas (Lower) - Central (Exchange Square)  (Normal Route) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "13",
+     "long": "Sai Wan Estate - Sai Ying Pun (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20000080",
+   "code": "",
+   "name": "Kwun Lung Lau",
+   "lat": 22.27977,
+   "lon": 114.12862,
+   "routes": [
+    {
+     "short": "12",
+     "long": "Kwun Lung Lau - Sai Ying Pun (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20000082",
+   "code": "",
+   "name": "Des Voeux Road West, Eastern End of Hong Kong Plaza",
+   "lat": 22.28678,
+   "lon": 114.13603,
+   "routes": [
+    {
+     "short": "12",
+     "long": "Kwun Lung Lau - Sai Ying Pun (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20000085",
+   "code": "",
+   "name": "Belcher's Street, Near Sun Shing Building",
+   "lat": 22.2863,
+   "lon": 114.13273,
+   "routes": [
+    {
+     "short": "12",
+     "long": "Kwun Lung Lau - Sai Ying Pun (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "13",
+     "long": "Sai Wan Estate - Sai Ying Pun (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20000088",
+   "code": "",
+   "name": "Smithfield, Near Man Kwong Court",
+   "lat": 22.28213,
+   "lon": 114.12831,
+   "routes": [
+    {
+     "short": "12",
+     "long": "Kwun Lung Lau - Sai Ying Pun (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "13",
+     "long": "Sai Wan Estate - Sai Ying Pun (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20000089",
+   "code": "",
+   "name": "No.12r Smithfield",
+   "lat": 22.28043,
+   "lon": 114.12926,
+   "routes": [
+    {
+     "short": "23",
+     "long": "Kennedy Town Station - Pok Fu Lam (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "23M",
+     "long": "Kennedy Town Station - Chi Fu Fa Yuen  (Special Departure) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20000092",
+   "code": "",
+   "name": "Pok Fu Lam Road, Opposite St. Stephen's Church College",
+   "lat": 22.28531,
+   "lon": 114.13835,
+   "routes": [
+    {
+     "short": "13",
+     "long": "Sai Wan Estate - Sai Ying Pun (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20000174",
+   "code": "",
+   "name": "Pok Fu Lam Road, Pok Field Road",
+   "lat": 22.28177,
+   "lon": 114.13204,
+   "routes": [
+    {
+     "short": "10",
+     "long": "Causeway Bay (Jaffe Road) - Cyberport Public Transport Interchange (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "10P",
+     "long": "Jaffe Road, Near Siu on Plaza - Cyberport Bus Terminus (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "13",
+     "long": "Sai Wan Estate - Sai Ying Pun (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "22",
+     "long": "Pok Fu Lam Gardens - Central (Exchange Square) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "22S",
+     "long": "Pok Fu Lam Gardens - Central (Central Ferry Piers)  (Special Departure) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "22X",
+     "long": "Pok Fu Lam Gardens - Central (Central Ferry Piers)  (Express Service (Via Yat Chee Villas) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "28",
+     "long": "Baguio Villa (Upper) - Causeway Bay (Sun Wui Road)  (Express Departures (Omits Bonham Road) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "28M",
+     "long": "Baguio Villa (Upper) - HKU Station (Circular) (Short Working Service) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "28S",
+     "long": "Baguio Villa (Upper) - Causeway Bay (Sun Wui Road)  (Short Working Service) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "31",
+     "long": "Tin Wan Estate - Causeway Bay (Jaffe Road) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "31X",
+     "long": "Tin Wan Estate - Causeway Bay (Jaffe Road)  (Express Service Departure) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "N31",
+     "long": "Tin Wan Estate - Causeway Bay (Jaffe Road)  (Overnight Service Departure) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20000289",
+   "code": "",
+   "name": "Belcher's Street, Near Imperial Kennedy",
+   "lat": 22.28262,
+   "lon": 114.12864,
+   "routes": [
+    {
+     "short": "12",
+     "long": "Kwun Lung Lau - Sai Ying Pun (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "13",
+     "long": "Sai Wan Estate - Sai Ying Pun (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "54",
+     "long": "Central (Ferry Piers) - Queen Mary Hospital  (Special Night Route) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20000298",
+   "code": "",
+   "name": "Queen's Road West, Near Centre Street",
+   "lat": 22.28685,
+   "lon": 114.1425,
+   "routes": [
+    {
+     "short": "55",
+     "long": "Queen Mary Hospital - Central Station (Connaught Road Central) (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20000299",
+   "code": "",
+   "name": "Queen's Road West, Near Western Street",
+   "lat": 22.2869,
+   "lon": 114.14116,
+   "routes": [
+    {
+     "short": "55",
+     "long": "Queen Mary Hospital - Central Station (Connaught Road Central) (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20000300",
+   "code": "",
+   "name": "Pok Fu Lam Road, Outside Li Sing Primary School",
+   "lat": 22.28539,
+   "lon": 114.13984,
+   "routes": [
+    {
+     "short": "55",
+     "long": "Queen Mary Hospital - Central Station (Connaught Road Central) (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20000303",
+   "code": "",
+   "name": "Bonham Road, Near Centre Street",
+   "lat": 22.28457,
+   "lon": 114.14213,
+   "routes": [
+    {
+     "short": "22",
+     "long": "Pok Fu Lam Gardens - Central (Exchange Square) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "22S",
+     "long": "Pok Fu Lam Gardens - Central (Central Ferry Piers)  (Special Departure) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "56",
+     "long": "Mid-Levels (Robinson Road) - North Point (Marble Road) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "56B",
+     "long": "Mid-Levels Robinson Road - Tin Hau Station (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20002403",
+   "code": "",
+   "name": "Mount Davis Road, Pok Fu Lam Road",
+   "lat": 22.27764,
+   "lon": 114.13065,
+   "routes": [
+    {
+     "short": "10",
+     "long": "Causeway Bay (Jaffe Road) - Cyberport Public Transport Interchange (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "10P",
+     "long": "Jaffe Road, Near Siu on Plaza - Cyberport Bus Terminus (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "23",
+     "long": "Kennedy Town Station - Pok Fu Lam (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "31",
+     "long": "Tin Wan Estate - Causeway Bay (Jaffe Road) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "31X",
+     "long": "Tin Wan Estate - Causeway Bay (Jaffe Road)  (Express Service Departure) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "N31",
+     "long": "Tin Wan Estate - Causeway Bay (Jaffe Road)  (Overnight Service Departure) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20002406",
+   "code": "",
+   "name": "Centre Street, Bonham Road",
+   "lat": 22.28444,
+   "lon": 114.14214,
+   "routes": [
+    {
+     "short": "22",
+     "long": "Pok Fu Lam Gardens - Central (Exchange Square) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "22S",
+     "long": "Central (Central Ferry Piers) - Pok Fu Lam Gardens  (Special Departure) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20002407",
+   "code": "",
+   "name": "Bonham Road, East Gate of the University of Hong Kong",
+   "lat": 22.28384,
+   "lon": 114.139,
+   "routes": [
+    {
+     "short": "22",
+     "long": "Pok Fu Lam Gardens - Central (Exchange Square) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "22S",
+     "long": "Central (Central Ferry Piers) - Pok Fu Lam Gardens  (Special Departure) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "22X",
+     "long": "Pok Fu Lam Gardens - Central (Central Ferry Piers)  (Express Service) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "28",
+     "long": "Baguio Villa (Upper) - Causeway Bay (Sun Wui Road) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20002839",
+   "code": "",
+   "name": "Kennedy Town Praya, Near Sai Cheung Street",
+   "lat": 22.2851,
+   "lon": 114.13109,
+   "routes": [
+    {
+     "short": "54",
+     "long": "Queen Mary Hospital - Central (Ferry Piers)  (Morning Special Departures) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20003279",
+   "code": "",
+   "name": "Forbes Street Playground",
+   "lat": 22.28138,
+   "lon": 114.12796,
+   "routes": [
+    {
+     "short": "23",
+     "long": "Kennedy Town Station - Pok Fu Lam (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "23M",
+     "long": "Kennedy Town Station - Chi Fu Fa Yuen  (Special Departure) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20003468",
+   "code": "",
+   "name": "Praya, Kennedy Town, Outside Belcher Bay Park",
+   "lat": 22.28453,
+   "lon": 114.13036,
+   "routes": [
+    {
+     "short": "12",
+     "long": "Kwun Lung Lau - Sai Ying Pun (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20003469",
+   "code": "",
+   "name": "Des Voeux Road West, Opposite Kwan Yick Building Phase 1",
+   "lat": 22.28716,
+   "lon": 114.13449,
+   "routes": [
+    {
+     "short": "54",
+     "long": "Queen Mary Hospital - Central (Ferry Piers)  (Morning Special Departures) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20003470",
+   "code": "",
+   "name": "Des Voeux Road West, Outside Kwan Yick Building Phase 2 (in Front of Bus Stop)",
+   "lat": 22.2873,
+   "lon": 114.13791,
+   "routes": [
+    {
+     "short": "12",
+     "long": "Kwun Lung Lau - Sai Ying Pun (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20003474",
+   "code": "",
+   "name": "Queen's Road West, Near Water Street",
+   "lat": 22.28652,
+   "lon": 114.1389,
+   "routes": [
+    {
+     "short": "12",
+     "long": "Kwun Lung Lau - Sai Ying Pun (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "13",
+     "long": "Sai Wan Estate - Sai Ying Pun (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20003475",
+   "code": "",
+   "name": "Queen's Road West, Outside Shek Tong Tsui Municipal Services Building",
+   "lat": 22.28581,
+   "lon": 114.13608,
+   "routes": [
+    {
+     "short": "13",
+     "long": "Sai Wan Estate - Sai Ying Pun (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20003476",
+   "code": "",
+   "name": "Pokfield Road Opposite University Height",
+   "lat": 22.28143,
+   "lon": 114.12987,
+   "routes": [
+    {
+     "short": "13",
+     "long": "Sai Wan Estate - Sai Ying Pun (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "23",
+     "long": "Kennedy Town Station - Pok Fu Lam (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20003517",
+   "code": "",
+   "name": "Third Street, Near Kwong Fung Lane",
+   "lat": 22.28603,
+   "lon": 114.13808,
+   "routes": [
+    {
+     "short": "55",
+     "long": "Queen Mary Hospital - Central Station (Connaught Road Central) (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20003518",
+   "code": "",
+   "name": "Des Voeux Road West, Near Chiu Kwong Street",
+   "lat": 22.28764,
+   "lon": 114.1392,
+   "routes": [
+    {
+     "short": "55",
+     "long": "Queen Mary Hospital - Central Station (Connaught Road Central) (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20003567",
+   "code": "",
+   "name": "Lyttelton Road, Near Babington Path",
+   "lat": 22.2829,
+   "lon": 114.14139,
+   "routes": [
+    {
+     "short": "45A",
+     "long": "Western District (First Street) - Conduit Road (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "45S",
+     "long": "Western District (First Street) - Conduit Road (Circular) (Short Working Service Departure) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "56",
+     "long": "Mid-Levels (Robinson Road) - North Point (Marble Road) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "56A",
+     "long": "Mid-Levels (Robinson Road) - Wan Chai (Circular) (Special Service to Wan Chai) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20004546",
+   "code": "",
+   "name": "Pok Fu Lam Playground, Pok Fu Lam Road",
+   "lat": 22.27832,
+   "lon": 114.13116,
+   "routes": [
+    {
+     "short": "22",
+     "long": "Pok Fu Lam Gardens - Central (Exchange Square) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "22S",
+     "long": "Central (Central Ferry Piers) - Pok Fu Lam Gardens  (Special Departure) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "22X",
+     "long": "Pok Fu Lam Gardens - Central (Central Ferry Piers)  (Express Service) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "23",
+     "long": "Kennedy Town Station - Pok Fu Lam (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "31",
+     "long": "Tin Wan Estate - Causeway Bay (Jaffe Road) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "55",
+     "long": "Queen Mary Hospital - Central Station (Connaught Road Central) (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20004590",
+   "code": "",
+   "name": "Universityheights, Pokfield Road",
+   "lat": 22.28128,
+   "lon": 114.12995,
+   "routes": [
+    {
+     "short": "23",
+     "long": "Kennedy Town Station - Pok Fu Lam (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20006948",
+   "code": "",
+   "name": "Praya, Kennedy Town, Outside Kennedy Town Swimming Pool",
+   "lat": 22.28576,
+   "lon": 114.13169,
+   "routes": [
+    {
+     "short": "12",
+     "long": "Kwun Lung Lau - Sai Ying Pun (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20006949",
+   "code": "",
+   "name": "Queen's Road West, Near Luen Wah Mansion",
+   "lat": 22.2861,
+   "lon": 114.13488,
+   "routes": [
+    {
+     "short": "13",
+     "long": "Sai Wan Estate - Sai Ying Pun (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20007656",
+   "code": "",
+   "name": "Second Street, Near Hoi Sing Building",
+   "lat": 22.28619,
+   "lon": 114.13957,
+   "routes": [
+    {
+     "short": "13",
+     "long": "Sai Wan Estate - Sai Ying Pun (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20009733",
+   "code": "",
+   "name": "Kennedy Town Station",
+   "lat": 22.28135,
+   "lon": 114.12893,
+   "routes": [
+    {
+     "short": "23",
+     "long": "Kennedy Town Station - Pok Fu Lam (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "23M",
+     "long": "Kennedy Town Station - Chi Fu Fa Yuen  (Special Departure) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "54M",
+     "long": "Kennedy Town Station - Queen Mary Hospital  (Supplementary Service) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "54S",
+     "long": "Kennedy Town Station - Queen Mary Hospital  (Supplementary Service Route) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "58",
+     "long": "Sha Wan Drive - Kennedy Town Station  (Special Departures) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "58A",
+     "long": "Aberdeen (Wu Nam Street) - Kennedy Town Station  (Special Departures) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "58M",
+     "long": "Bel-Air on the Peak - Kennedy Town Station  (Special Departures) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "59",
+     "long": "Kennedy Town Station - Shum Wan Road Public Transport Terminus (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "59X",
+     "long": "Kennedy Town Station - Grantham Hospital  (Special Departures) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20011779",
+   "code": "",
+   "name": "Smithfield, Near Wai Wah Court",
+   "lat": 22.28048,
+   "lon": 114.12919,
+   "routes": [
+    {
+     "short": "12",
+     "long": "Kwun Lung Lau - Sai Ying Pun (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "13",
+     "long": "Sai Wan Estate - Sai Ying Pun (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20012373",
+   "code": "",
+   "name": "Pok Fu Lam Road, Near HKU Station Exit C1",
+   "lat": 22.28443,
+   "lon": 114.1343,
+   "routes": [
+    {
+     "short": "55",
+     "long": "Queen Mary Hospital - Central Station (Connaught Road Central) (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20012959",
+   "code": "",
+   "name": "First Street, Near Centre Street Market",
+   "lat": 22.28647,
+   "lon": 114.14216,
+   "routes": [
+    {
+     "short": "45A",
+     "long": "Western District (First Street) - Conduit Road (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "45S",
+     "long": "Western District (First Street) - Conduit Road (Circular) (Short Working Service Departure) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20012960",
+   "code": "",
+   "name": "Conduit Road, Opposite to Skyline Mansion",
+   "lat": 22.28155,
+   "lon": 114.14211,
+   "routes": [
+    {
+     "short": "45A",
+     "long": "Western District (First Street) - Conduit Road (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "45S",
+     "long": "Western District (First Street) - Conduit Road (Circular) (Short Working Service Departure) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20012969",
+   "code": "",
+   "name": "First Street, Near Centre Street Market",
+   "lat": 22.28648,
+   "lon": 114.14222,
+   "routes": [
+    {
+     "short": "45A",
+     "long": "Western District (First Street) - Conduit Road (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "45S",
+     "long": "Western District (First Street) - Conduit Road (Circular) (Short Working Service Departure) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20013166",
+   "code": "",
+   "name": "Des Voeux Road West, Near Fung Yip Building",
+   "lat": 22.28694,
+   "lon": 114.13667,
+   "routes": [
+    {
+     "short": "12",
+     "long": "Kwun Lung Lau - Sai Ying Pun (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20013192",
+   "code": "",
+   "name": "Queen's Road West, Opposite Andes Plaza",
+   "lat": 22.28687,
+   "lon": 114.1419,
+   "routes": [
+    {
+     "short": "12",
+     "long": "Kwun Lung Lau - Sai Ying Pun (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20013193",
+   "code": "",
+   "name": "Queen's Road West, Near Luen Wah Mansion",
+   "lat": 22.28615,
+   "lon": 114.13473,
+   "routes": [
+    {
+     "short": "12",
+     "long": "Kwun Lung Lau - Sai Ying Pun (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20013194",
+   "code": "",
+   "name": "Belcher's Street, Near Yue Yee Mansion",
+   "lat": 22.28381,
+   "lon": 114.13087,
+   "routes": [
+    {
+     "short": "12",
+     "long": "Kwun Lung Lau - Sai Ying Pun (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20013195",
+   "code": "",
+   "name": "Belcher's Street, Near Lungga Mansion",
+   "lat": 22.28276,
+   "lon": 114.12944,
+   "routes": [
+    {
+     "short": "12",
+     "long": "Kwun Lung Lau - Sai Ying Pun (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "13",
+     "long": "Sai Wan Estate - Sai Ying Pun (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "54",
+     "long": "Central (Ferry Piers) - Queen Mary Hospital  (Special Night Route) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20014546",
+   "code": "",
+   "name": "Conduit Road, Near Skyline Mansion Block 2",
+   "lat": 22.28144,
+   "lon": 114.14207,
+   "routes": [
+    {
+     "short": "3",
+     "long": "Central (Hong Kong Station Public Transport Interchange) - Po Shan Road  (Peak Hours Departures (Omits City Hall) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "3A",
+     "long": "Central (Hong Kong Station Public Transport Interchange) - Conduit Road  (Peak Hours Departures (Omits City Hall) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20014548",
+   "code": "",
+   "name": "Hatton Road, Near Wisdom Court Block A",
+   "lat": 22.2811,
+   "lon": 114.13991,
+   "routes": [
+    {
+     "short": "3",
+     "long": "Central (Hong Kong Station Public Transport Interchange) - Po Shan Road  (Peak Hours Departures (Omits City Hall) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "3A",
+     "long": "Central (Hong Kong Station Public Transport Interchange) - Conduit Road  (Peak Hours Departures (Omits City Hall) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20014549",
+   "code": "",
+   "name": "Kotewall Road, Near Hatton House",
+   "lat": 22.28072,
+   "lon": 114.13898,
+   "routes": [
+    {
+     "short": "3",
+     "long": "Central (Hong Kong Station Public Transport Interchange) - Po Shan Road  (Peak Hours Departures (Omits City Hall) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "3A",
+     "long": "Central (Hong Kong Station Public Transport Interchange) - Conduit Road  (Peak Hours Departures (Omits City Hall) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20014550",
+   "code": "",
+   "name": "Po Shan Road, Near Po Shan Mansions Block A",
+   "lat": 22.2803,
+   "lon": 114.14134,
+   "routes": [
+    {
+     "short": "3",
+     "long": "Central (Hong Kong Station Public Transport Interchange) - Po Shan Road  (Peak Hours Departures (Omits City Hall) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20014551",
+   "code": "",
+   "name": "Kotewall Road, Near Kotewall Road Fresh Water Service Reservoir",
+   "lat": 22.2808,
+   "lon": 114.13893,
+   "routes": [
+    {
+     "short": "3",
+     "long": "Central (Hong Kong Station Public Transport Interchange) - Po Shan Road (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "3A",
+     "long": "Central (Hong Kong Station Public Transport Interchange) - Conduit Road (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20014552",
+   "code": "",
+   "name": "Kotewall Road, Near the University of Hong Kong University Lodge",
+   "lat": 22.28115,
+   "lon": 114.13987,
+   "routes": [
+    {
+     "short": "3",
+     "long": "Central (Hong Kong Station Public Transport Interchange) - Po Shan Road (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "3A",
+     "long": "Central (Hong Kong Station Public Transport Interchange) - Conduit Road (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20014553",
+   "code": "",
+   "name": "Conduit Road, Near Conduit Road Rest Garden",
+   "lat": 22.28149,
+   "lon": 114.14203,
+   "routes": [
+    {
+     "short": "3",
+     "long": "Central (Hong Kong Station Public Transport Interchange) - Po Shan Road (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "3A",
+     "long": "Central (Hong Kong Station Public Transport Interchange) - Conduit Road (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20014868",
+   "code": "",
+   "name": "Bonham Road, Near Golden Phoenix Court",
+   "lat": 22.28449,
+   "lon": 114.1421,
+   "routes": [
+    {
+     "short": "10",
+     "long": "Causeway Bay (Jaffe Road) - Cyberport Public Transport Interchange (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "31",
+     "long": "Tin Wan Estate - Causeway Bay (Jaffe Road) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "N31",
+     "long": "Tin Wan Estate - Causeway Bay (Jaffe Road)  (Overnight Service Departure) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20014869",
+   "code": "",
+   "name": "Bonham Road, East Gate of the University of Hong Kong",
+   "lat": 22.28414,
+   "lon": 114.13858,
+   "routes": [
+    {
+     "short": "10",
+     "long": "Causeway Bay (Jaffe Road) - Cyberport Public Transport Interchange (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "31",
+     "long": "Tin Wan Estate - Causeway Bay (Jaffe Road) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "N31",
+     "long": "Tin Wan Estate - Causeway Bay (Jaffe Road)  (Overnight Service Departure) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20014870",
+   "code": "",
+   "name": "Pokfulam Road Near Pokfield Road",
+   "lat": 22.28203,
+   "lon": 114.13254,
+   "routes": [
+    {
+     "short": "10",
+     "long": "Causeway Bay (Jaffe Road) - Cyberport Public Transport Interchange (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "10P",
+     "long": "Jaffe Road, Near Siu on Plaza - Cyberport Bus Terminus (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "31",
+     "long": "Tin Wan Estate - Causeway Bay (Jaffe Road) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "N31",
+     "long": "Tin Wan Estate - Causeway Bay (Jaffe Road)  (Overnight Service Departure) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20014871",
+   "code": "",
+   "name": "Pokfulam Road Near Mount Davis Road",
+   "lat": 22.27843,
+   "lon": 114.13117,
+   "routes": [
+    {
+     "short": "10",
+     "long": "Causeway Bay (Jaffe Road) - Cyberport Public Transport Interchange (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "10P",
+     "long": "Jaffe Road, Near Siu on Plaza - Cyberport Bus Terminus (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "N31",
+     "long": "Tin Wan Estate - Causeway Bay (Jaffe Road)  (Overnight Service Departure) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20014877",
+   "code": "",
+   "name": "Pok Fu Lam Road, Near Lady Ho Tung Hall, the University of Hong Kong Jockey Club Student Village 1",
+   "lat": 22.28413,
+   "lon": 114.13352,
+   "routes": [
+    {
+     "short": "10",
+     "long": "Causeway Bay (Jaffe Road) - Cyberport Public Transport Interchange (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "10P",
+     "long": "Jaffe Road, Near Siu on Plaza - Cyberport Bus Terminus (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "31",
+     "long": "Tin Wan Estate - Causeway Bay (Jaffe Road) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "31X",
+     "long": "Tin Wan Estate - Causeway Bay (Jaffe Road)  (Express Service Departure) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "N31",
+     "long": "Tin Wan Estate - Causeway Bay (Jaffe Road)  (Overnight Service Departure) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20014878",
+   "code": "",
+   "name": "Pok Fu Lam Road, Near the Belcher's Tower 3",
+   "lat": 22.28442,
+   "lon": 114.13424,
+   "routes": [
+    {
+     "short": "10",
+     "long": "Causeway Bay (Jaffe Road) - Cyberport Public Transport Interchange (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "10P",
+     "long": "Jaffe Road, Near Siu on Plaza - Cyberport Bus Terminus (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "31",
+     "long": "Tin Wan Estate - Causeway Bay (Jaffe Road) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "31X",
+     "long": "Tin Wan Estate - Causeway Bay (Jaffe Road)  (Express Service Departure) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "N31",
+     "long": "Tin Wan Estate - Causeway Bay (Jaffe Road)  (Overnight Service Departure) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20014879",
+   "code": "",
+   "name": "Bonham Road, Near Saint Stephen's Church & Kindergarten",
+   "lat": 22.28475,
+   "lon": 114.13826,
+   "routes": [
+    {
+     "short": "10",
+     "long": "Causeway Bay (Jaffe Road) - Cyberport Public Transport Interchange (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "31",
+     "long": "Tin Wan Estate - Causeway Bay (Jaffe Road) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "N31",
+     "long": "Tin Wan Estate - Causeway Bay (Jaffe Road)  (Overnight Service Departure) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20014880",
+   "code": "",
+   "name": "Bonham Road, Near St Paul's College",
+   "lat": 22.28395,
+   "lon": 114.13872,
+   "routes": [
+    {
+     "short": "10",
+     "long": "Causeway Bay (Jaffe Road) - Cyberport Public Transport Interchange (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20014888",
+   "code": "",
+   "name": "Bonham Road, Near St Paul's College",
+   "lat": 22.28399,
+   "lon": 114.13882,
+   "routes": [
+    {
+     "short": "31",
+     "long": "Tin Wan Estate - Causeway Bay (Jaffe Road) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "N31",
+     "long": "Tin Wan Estate - Causeway Bay (Jaffe Road)  (Overnight Service Departure) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20020098",
+   "code": "",
+   "name": "Bonham Road, Outside Good View Court",
+   "lat": 22.28482,
+   "lon": 114.14116,
+   "routes": [
+    {
+     "short": "56",
+     "long": "Mid-Levels (Robinson Road) - North Point (Marble Road) (Green Minibus Services)",
+     "mode": "minibus"
+    },
+    {
+     "short": "56B",
+     "long": "Mid-Levels Robinson Road - Tin Hau Station (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20021452",
+   "code": "",
+   "name": "Belcher's Street, Near Yue Yee Mansion",
+   "lat": 22.2839,
+   "lon": 114.13101,
+   "routes": [
+    {
+     "short": "13",
+     "long": "Sai Wan Estate - Sai Ying Pun (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20022306",
+   "code": "",
+   "name": "Pok Fu Lam Road, Outside Lady Ho Tung Hall",
+   "lat": 22.28416,
+   "lon": 114.13352,
+   "routes": [
+    {
+     "short": "55",
+     "long": "Queen Mary Hospital - Central Station (Connaught Road Central) (Circular) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "20023791",
+   "code": "",
+   "name": "Queen's Road West, Near Shek Tong Tsui Complex",
+   "lat": 22.28588,
+   "lon": 114.13573,
+   "routes": [
+    {
+     "short": "54",
+     "long": "Central (Ferry Piers) - Queen Mary Hospital  (Special Night Route) (Green Minibus Services)",
+     "mode": "minibus"
+    }
+   ]
+  },
+  {
+   "id": "99146",
+   "code": "",
+   "name": "Water Street (West Bound)",
+   "lat": 22.28748,
+   "lon": 114.13902,
+   "routes": [
+    {
+     "short": "",
+     "long": "Shau Kei Wan - Kennedy Town ($2 For Joyyou Card Holder Aged 60 to 64) (HK Tramways)",
+     "mode": "tram"
+    }
+   ]
+  },
+  {
+   "id": "99147",
+   "code": "",
+   "name": "Whitty Street (West Bound)",
+   "lat": 22.28686,
+   "lon": 114.13677,
+   "routes": [
+    {
+     "short": "",
+     "long": "Shau Kei Wan - Kennedy Town ($2 For Joyyou Card Holder Aged 60 to 64) (HK Tramways)",
+     "mode": "tram"
+    }
+   ]
+  },
+  {
+   "id": "99148",
+   "code": "",
+   "name": "Hill Road (West Bound)",
+   "lat": 22.28701,
+   "lon": 114.13452,
+   "routes": [
+    {
+     "short": "",
+     "long": "Shau Kei Wan - Kennedy Town ($2 For Joyyou Card Holder Aged 60 to 64) (HK Tramways)",
+     "mode": "tram"
+    }
+   ]
+  },
+  {
+   "id": "99149",
+   "code": "",
+   "name": "Queen's Road West (West Bound)",
+   "lat": 22.28612,
+   "lon": 114.13211,
+   "routes": [
+    {
+     "short": "",
+     "long": "Shau Kei Wan - Kennedy Town ($2 For Joyyou Card Holder Aged 60 to 64) (HK Tramways)",
+     "mode": "tram"
+    }
+   ]
+  },
+  {
+   "id": "99150",
+   "code": "",
+   "name": "Kennnedy Town Praya (West Bound)",
+   "lat": 22.2843,
+   "lon": 114.13036,
+   "routes": [
+    {
+     "short": "",
+     "long": "Shau Kei Wan - Kennedy Town ($2 For Joyyou Card Holder Aged 60 to 64) (HK Tramways)",
+     "mode": "tram"
+    }
+   ]
+  },
+  {
+   "id": "99151",
+   "code": "",
+   "name": "Sands Street (West Bound)",
+   "lat": 22.28348,
+   "lon": 114.12934,
+   "routes": [
+    {
+     "short": "",
+     "long": "Shau Kei Wan - Kennedy Town ($2 For Joyyou Card Holder Aged 60 to 64) (HK Tramways)",
+     "mode": "tram"
+    }
+   ]
+  },
+  {
+   "id": "99152",
+   "code": "",
+   "name": "Smithfield (West Bound)",
+   "lat": 22.28317,
+   "lon": 114.1277,
+   "routes": [
+    {
+     "short": "",
+     "long": "Shau Kei Wan - Kennedy Town ($2 For Joyyou Card Holder Aged 60 to 64) (HK Tramways)",
+     "mode": "tram"
+    }
+   ]
+  },
+  {
+   "id": "99202",
+   "code": "",
+   "name": "North Street (East Bound)",
+   "lat": 22.2834,
+   "lon": 114.12878,
+   "routes": [
+    {
+     "short": "",
+     "long": "Shau Kei Wan - Kennedy Town ($2 For Joyyou Card Holder Aged 60 to 64) (HK Tramways)",
+     "mode": "tram"
+    }
+   ]
+  },
+  {
+   "id": "99203",
+   "code": "",
+   "name": "Holland Street (East Bound)",
+   "lat": 22.28458,
+   "lon": 114.13055,
+   "routes": [
+    {
+     "short": "",
+     "long": "Shau Kei Wan - Kennedy Town ($2 For Joyyou Card Holder Aged 60 to 64) (HK Tramways)",
+     "mode": "tram"
+    }
+   ]
+  },
+  {
+   "id": "99204",
+   "code": "",
+   "name": "Queen's Road West (East Bound)",
+   "lat": 22.28658,
+   "lon": 114.13225,
+   "routes": [
+    {
+     "short": "",
+     "long": "Shau Kei Wan - Kennedy Town ($2 For Joyyou Card Holder Aged 60 to 64) (HK Tramways)",
+     "mode": "tram"
+    }
+   ]
+  },
+  {
+   "id": "99205",
+   "code": "",
+   "name": "Hill Road (East Bound)",
+   "lat": 22.28715,
+   "lon": 114.13425,
+   "routes": [
+    {
+     "short": "",
+     "long": "Shau Kei Wan - Kennedy Town ($2 For Joyyou Card Holder Aged 60 to 64) (HK Tramways)",
+     "mode": "tram"
+    }
+   ]
+  },
+  {
+   "id": "99206",
+   "code": "",
+   "name": "Whitty Street (East Bound)",
+   "lat": 22.28682,
+   "lon": 114.13643,
+   "routes": [
+    {
+     "short": "",
+     "long": "Shau Kei Wan - Kennedy Town ($2 For Joyyou Card Holder Aged 60 to 64) (HK Tramways)",
+     "mode": "tram"
+    }
+   ]
+  },
+  {
+   "id": "99207",
+   "code": "",
+   "name": "Water Street (East Bound)",
+   "lat": 22.28742,
+   "lon": 114.13858,
+   "routes": [
+    {
+     "short": "",
+     "long": "Shau Kei Wan - Kennedy Town ($2 For Joyyou Card Holder Aged 60 to 64) (HK Tramways)",
+     "mode": "tram"
+    }
+   ]
+  },
+  {
+   "id": "99313",
+   "code": "",
+   "name": "Shek Tong Tsui Terminus",
+   "lat": 22.28709,
+   "lon": 114.13508,
+   "routes": [
+    {
+     "short": "",
+     "long": "North Point - Shek Tong Tsui ($2 For Joyyou Card Holder Aged 60 to 64) (HK Tramways)",
+     "mode": "tram"
+    }
+   ]
+  }
+ ]
+}

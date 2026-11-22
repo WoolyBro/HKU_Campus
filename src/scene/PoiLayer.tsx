@@ -13,6 +13,7 @@ import { useApp } from '../app/store'
 import { createModelMaterial } from '../lib/voxel/materials'
 import { propGeometry } from '../lib/voxel/models'
 import { PROP, PROP_STRIDE, PROP_TYPE_COUNT, type FeatureRecord } from '../lib/voxel/world-format'
+import { POI_META } from '../features/guide/poi'
 import { rig } from './rig'
 
 const v = new THREE.Vector3()
@@ -172,6 +173,8 @@ function Labels() {
           else if (f.kind === 'building') ok = st.layers.buildings && (f.rank >= 80 ? vh < 1500 : f.rank >= 50 ? vh < 520 : f.rank >= 10 ? vh < 200 : f.rank >= 6 ? vh < 90 : false)
           else if (f.kind === 'landmark') ok = st.layers.landmarks && vh < 1900
           else if (f.kind === 'road') ok = st.layers.roads && vh < 520
+          else if (f.kind === 'poi')
+            ok = st.layers.pois && !!f.poi && st.poiCats[f.poi] && (f.rank >= 80 ? vh < 1300 : f.poi === 'library' ? vh < 650 : f.poi === 'transit' ? vh < 280 : f.rank >= 40 ? vh < 320 : vh < 175)
           else ok = st.layers.pois && vh < 460
           if (!ok) continue
           v.set(f.x, f.y + 3, f.z).project(cam)
@@ -188,7 +191,7 @@ function Labels() {
         for (const c of cands) {
           if (picked.length >= maxLabels) break
           const text = c.f.kind === 'zone' ? c.f.name.toUpperCase() : c.f.name
-          const bw = Math.min(230, text.length * 6.6 + (c.f.short || c.f.code ? 44 : 18)),
+          const bw = Math.min(230, text.length * 6.6 + (c.f.short ? 44 : 18)),
             bh = 24
           const box: [number, number, number, number] = [c.sx - bw / 2, c.sy - bh - 6, c.sx + bw / 2, c.sy - 6]
           if (boxes.some((b) => box[0] < b[2] + 6 && box[2] > b[0] - 6 && box[1] < b[3] + 4 && box[3] > b[1] - 4)) continue
@@ -246,8 +249,14 @@ function Labels() {
           node.feature = f
           if (f) {
             node.el.className = `map-label kind-${f.kind}${f.tier === 'A' ? ' tier-a' : ''}`
-            const tag = f.short || f.code
-            node.el.replaceChildren(document.createTextNode(f.name), ...(tag ? [Object.assign(document.createElement('span'), { className: 'tag', textContent: tag })] : []))
+            const tag = f.short
+            const meta = f.kind === 'poi' && f.poi ? POI_META[f.poi] : null
+            node.el.style.borderLeftColor = meta ? meta.colour : ''
+            node.el.replaceChildren(
+              ...(meta ? [Object.assign(document.createElement('span'), { className: 'icon', textContent: f.poi === 'transit' && f.rank < 80 ? '🚏' : meta.icon })] : []),
+              document.createTextNode(f.name),
+              ...(tag ? [Object.assign(document.createElement('span'), { className: 'tag', textContent: tag })] : []),
+            )
           }
         }
         node.el.classList.toggle('is-selected', !!f && f.i === st.selected)

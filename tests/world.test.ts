@@ -108,6 +108,48 @@ describe.skipIf(!worldBuilt)('shipped world data', () => {
     expect(bad).toBe(0)
   })
 
+  it('attaches guide facts with their sources and links nearby places to real features', () => {
+    for (const f of data.features) {
+      for (const x of f.guide?.facts ?? []) expect(x.source.length, `${f.name}: ${x.label}`).toBeGreaterThan(3)
+      for (const n of f.guide?.nearby ?? []) expect(n.i && data.features[n.i - 1]?.name, `${f.name} → ${n.name}`).toBe(n.name)
+    }
+    const campus = data.features.filter((f) => f.kind === 'building' && f.tier !== 'C')
+    expect(campus.filter((f) => f.guide?.nearby?.length).length / campus.length).toBeGreaterThan(0.5)
+  })
+
+  it('lists transit stops with the routes that serve them', () => {
+    const stops = data.features.filter((f) => f.kind === 'poi' && f.poi === 'transit')
+    expect(stops.length).toBeGreaterThanOrEqual(30)
+    for (const s of stops) expect(s.notes, s.name).toMatch(/\w/)
+  })
+
+  it('routes every curated tour along walkable ground through all its stops', () => {
+    const tours = readJson<{ tours: { id: string; distanceM: number; stops: { i: number; key: string; legM: number }[]; path: number[] }[] }>('public/world/tours.json').tours
+    expect(tours.length).toBeGreaterThanOrEqual(1)
+    for (const t of tours) {
+      expect(t.stops.length, t.id).toBeGreaterThanOrEqual(6)
+      expect(t.distanceM).toBeGreaterThan(800)
+      for (const [k, st] of t.stops.entries()) {
+        expect(data.features[st.i - 1]?.key).toBe(st.key)
+        if (k > 0) expect(st.legM, `${t.id} leg ${k}`).toBeGreaterThan(0)
+      }
+      for (let k = 0; k < t.path.length; k += 3) {
+        const i = Math.floor(t.path[k] - data.meta.world.minX),
+          j = Math.floor(t.path[k + 2] - data.meta.world.minZ)
+        const c = j * data.W + i
+        const bf = data.sFeat[c] ? data.features[data.sFeat[c] - 1] : undefined
+        // walking under a covered walkway (canopy on posts) is fine
+        const inBuilding = !!bf && bf.kind === 'building' && bf.category !== 'canopy' && data.sBot[c] <= data.height[c]
+        // a tour may pass through a building stop (the walker goes through it); elsewhere it stays outside
+        if (inBuilding)
+          expect(
+            t.stops.some((st) => st.i === data.sFeat[c]),
+            `${t.id} vertex in a building that is not a stop`,
+          ).toBe(true)
+      }
+    }
+  })
+
   it('records every manual override with evidence, confidence, reason and date', () => {
     const file = readJson<{ overrides: Record<string, unknown>[] }>('data/manual-overrides.json')
     for (const o of file.overrides)

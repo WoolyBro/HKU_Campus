@@ -1,0 +1,25 @@
+{
+  "note": "Curated walking tour. Stops are features of the model (by key). Texts are short summaries written for this project from the facts in the inspector (official HKU map names, Antiquities and Monuments Office, Wikidata, OpenStreetMap). Routes are computed along mapped paths. Illustrative — not for navigation.",
+  "tours": [
+    {
+      "id": "hku-essentials",
+      "title": "HKU essentials: Centennial Campus to the Main Building",
+      "summary": "From HKU MTR station through the Centennial Campus and the Main Library to the declared monuments of the old campus: the Main Building, Hung Hing Ying, Eliot Hall and May Hall.",
+      "stops": [
+        { "key": "node/6135479158", "text": "HKU station on the MTR Island Line, below the campus; its exits lead up to the Centennial Campus and Pok Fu Lam Road." },
+        { "key": "official-landmark/201", "text": "Centennial Gate: the entrance to the Centennial Campus." },
+        { "key": "way/315571039", "text": "The Jockey Club Tower on the Centennial Campus; a café and a bank branch are mapped inside." },
+        { "key": "way/315571046", "text": "Run Run Shaw Tower; the Music Library and a restaurant are mapped inside." },
+        { "key": "way/534044190", "text": "Lee Shau Kee Lecture Centre, with large lecture theatres; a restaurant is mapped inside." },
+        { "key": "way/182023179", "text": "Library Building (New Wing): the HKU Main Library." },
+        { "key": "way/182208644", "text": "Fung Ping Shan Building, home of the University Museum and Art Gallery; its exterior is a declared monument." },
+        { "key": "relation/2424275", "text": "Main Building: the University's first building, opened in 1912, around two courtyards. Its exterior is a declared monument." },
+        { "key": "official-landmark/192", "text": "Sun Yat-sen Place, the open square by the Main Building." },
+        { "key": "way/181773526", "text": "Hung Hing Ying Building (1919), a declared monument." },
+        { "key": "way/182203652", "text": "Chong Yuet Ming Amenities Centre: cafés and fast food are mapped inside." },
+        { "key": "way/182208614", "text": "Eliot Hall (1914) and, next to it, May Hall (1915): former halls of residence, both declared monuments." },
+        { "key": "way/390554535", "text": "Meng Wah Complex: the University Health Service is mapped inside." }
+      ]
+    }
+  ]
+}

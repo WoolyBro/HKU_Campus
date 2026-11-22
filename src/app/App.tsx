@@ -15,6 +15,7 @@ import { InfoPanel } from '../features/source-panel/InfoPanel'
 import { CampusScene } from '../scene/CampusScene'
 import { runtime, startLoading } from './runtime'
 import { useApp, type Panel } from './store'
+import { GuidePanel } from '../features/guide/GuidePanel'
 import { readUrlState } from './urlState'
 
 function hasWebGL2(): boolean {
@@ -26,12 +27,13 @@ function hasWebGL2(): boolean {
 }
 
 const PANELS: [Exclude<Panel, null>, string, () => React.ReactNode][] = [
+  ['guide', 'Student guide', () => <span aria-hidden="true">🎓</span>],
   ['layers', 'Layers', () => <IconLayers />],
   ['places', 'Places', () => <IconPin />],
   ['directory', 'Directory', () => <IconList />],
   ['info', 'About & sources', () => <IconInfo />],
 ]
-const PANEL_TITLE: Record<Exclude<Panel, null>, string> = { layers: 'Layers & display', places: 'Guided fly-to', directory: 'Campus directory', info: 'About this model' }
+const PANEL_TITLE: Record<Exclude<Panel, null>, string> = { guide: 'Student guide', layers: 'Layers & display', places: 'Guided fly-to', directory: 'Campus directory', info: 'About this model' }
 
 function SidePanel() {
   const panel = useApp((s) => s.panel)
@@ -49,6 +51,7 @@ function SidePanel() {
         </button>
       </header>
       <div className="scroll-thin min-h-0 flex-1 overflow-y-auto p-3">
+        {panel === 'guide' && <GuidePanel />}
         {panel === 'layers' && <LayersPanel />}
         {panel === 'places' && <PlacesPanel />}
         {panel === 'directory' && <Directory />}

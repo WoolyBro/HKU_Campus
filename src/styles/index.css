@@ -150,6 +150,16 @@ nav .btn {
   background: rgb(36 78 140 / 0.86);
   font-weight: 500;
 }
+.map-label.kind-poi {
+  background: rgb(255 255 255 / 0.94);
+  color: #1b2430;
+  font-weight: 600;
+  font-size: 11.5px;
+  border-left-width: 5px;
+}
+.map-label .icon {
+  margin-right: 4px;
+}
 .map-label.is-selected {
   background: var(--color-sun);
   color: #1b2430;

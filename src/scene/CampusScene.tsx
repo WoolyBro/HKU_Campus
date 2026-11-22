@@ -9,6 +9,7 @@ import { CameraController } from './CameraController'
 import { Lighting } from './Lighting'
 import { PathLayer } from './PathLayer'
 import { PoiLayer } from './PoiLayer'
+import { TourLayer } from './TourLayer'
 import { RoadLayer } from './RoadLayer'
 import { rig } from './rig'
 import { TerrainLayer } from './TerrainLayer'
@@ -59,6 +60,7 @@ export function CampusScene() {
       <BuildingLayer />
       <VegetationLayer />
       <PoiLayer />
+      <TourLayer />
       <Overlays />
     </>
   )

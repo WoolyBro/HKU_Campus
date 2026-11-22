@@ -10,7 +10,7 @@
  *
  * Output: data/processed/*.geojson + data/processed/summary.json
  */
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import osmtogeojson from 'osmtogeojson'
@@ -37,6 +37,14 @@ export interface ProcessedProps {
 }
 
 const raw = JSON.parse(readFileSync(RAW_FILE, 'utf8'))
+// supplementary guide extract (shops, emergency points, healthcare, offices): merged, duplicates skipped
+{
+  const extraFile = resolve(ROOT, 'data/raw/osm-extra.json')
+  if (existsSync(extraFile)) {
+    const seen = new Set((raw.elements as { type: string; id: number }[]).map((e) => `${e.type}/${e.id}`))
+    for (const e of JSON.parse(readFileSync(extraFile, 'utf8')).elements as { type: string; id: number }[]) if (!seen.has(`${e.type}/${e.id}`)) raw.elements.push(e)
+  }
+}
 const meta = JSON.parse(readFileSync(resolve(ROOT, 'data/raw/osm-hku.meta.json'), 'utf8'))
 const boundary = JSON.parse(readFileSync(resolve(ROOT, 'data/campus-boundary.geojson'), 'utf8'))
 const campusPoly = boundary.features[0] as Feature<Polygon | MultiPolygon>
@@ -93,6 +101,25 @@ function fullyInside(f: Feature<Geometry>): boolean {
   const b = turf.bbox(f)
   return b[0] >= studyBbox[0] && b[2] <= studyBbox[2] && b[1] >= studyBbox[1] && b[3] <= studyBbox[3]
 }
+
+/** Amenities kept even without a name: street furniture and things students look for. */
+const DETAIL_AMENITIES = new Set([
+  'bench',
+  'bicycle_parking',
+  'bicycle_rental',
+  'bicycle_repair_station',
+  'drinking_water',
+  'toilets',
+  'waste_basket',
+  'recycling',
+  'post_box',
+  'atm',
+  'vending_machine',
+  'charging_station',
+  'telephone',
+  'water_point',
+  'microwave',
+])
 
 function classify(tags: Tags, g: Geometry): { group: string; kind: string } | null {
   const area = isArea(g)
@@ -154,7 +181,13 @@ function classify(tags: Tags, g: Geometry): { group: string; kind: string } | nu
     if (tags.barrier === 'gate' || tags.barrier === 'lift_gate') return { group: 'facilities', kind: 'gate' }
     if (tags.tourism === 'artwork' || tags.tourism === 'viewpoint' || tags.tourism === 'museum' || tags.tourism === 'information') return { group: 'facilities', kind: tags.tourism }
     if (tags.natural === 'peak') return { group: 'terrain-features', kind: 'peak' }
+    // street furniture and student amenities are kept even when unnamed: they are real, mapped details
+    if (tags.amenity && DETAIL_AMENITIES.has(tags.amenity)) return { group: 'facilities', kind: tags.amenity }
+    if (tags.emergency === 'phone' || tags.emergency === 'defibrillator') return { group: 'facilities', kind: `emergency_${tags.emergency}` }
     if (tags.amenity && tags.name) return { group: 'facilities', kind: tags.amenity }
+    if (tags.shop && tags.name) return { group: 'facilities', kind: 'shop' }
+    if (tags.healthcare && tags.name) return { group: 'facilities', kind: 'healthcare' }
+    if (tags.office === 'university' && tags.name) return { group: 'facilities', kind: 'office_university' }
     if (tags.leisure && tags.name) return { group: 'facilities', kind: tags.leisure }
     return null
   }

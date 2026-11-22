@@ -24,15 +24,15 @@ Everything geographic happens at build time. The browser only decompresses, mesh
 
 ## Data pipeline
 
-| Script | Role |
-| --- | --- |
-| `scripts/fetch-osm.ts` | Stores the campus boundary as a polygon; one Overpass query for the study-area polygon with endpoint fallback and back-off; caches response + query + timestamp |
-| `scripts/fetch-official.ts` | Reads the official HKU map location list, fetches each location record once (with retry and a polite delay), extracts names, codes, campus ids, points and facility names; assigns zones from `data/campus-zones.json` |
-| `scripts/fetch-landsd-buildings.ts` | Pages the Lands Department Building WFS for the study area; keeps names, base / top heights and block type |
-| `scripts/fetch-terrain.ts` | Downloads and unpacks the 5 m DTM |
-| `scripts/process-osm.ts` | Resolves multipolygons, assigns stable ids (`way/123`), keeps all tags, groups into buildings / roads / paths / stairs / bridges / waterways / vegetation / facilities / transport / terrain-features, flags unreliable geometry |
-| `scripts/build-terrain.ts` | Streams the ASCII grid, crops, resamples bicubically (range-clamped) to 1 m, two light box blurs |
-| `scripts/build-voxel-world.ts` | Combines everything into the block world (below) |
+| Script                              | Role                                                                                                                                                                                                                             |
+| ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `scripts/fetch-osm.ts`              | Stores the campus boundary as a polygon; one Overpass query for the study-area polygon with endpoint fallback and back-off; caches response + query + timestamp                                                                  |
+| `scripts/fetch-official.ts`         | Reads the official HKU map location list, fetches each location record once (with retry and a polite delay), extracts names, codes, campus ids, points and facility names; assigns zones from `data/campus-zones.json`           |
+| `scripts/fetch-landsd-buildings.ts` | Pages the Lands Department Building WFS for the study area; keeps names, base / top heights and block type                                                                                                                       |
+| `scripts/fetch-terrain.ts`          | Downloads and unpacks the 5 m DTM                                                                                                                                                                                                |
+| `scripts/process-osm.ts`            | Resolves multipolygons, assigns stable ids (`way/123`), keeps all tags, groups into buildings / roads / paths / stairs / bridges / waterways / vegetation / facilities / transport / terrain-features, flags unreliable geometry |
+| `scripts/build-terrain.ts`          | Streams the ASCII grid, crops, resamples bicubically (range-clamped) to 1 m, two light box blurs                                                                                                                                 |
+| `scripts/build-voxel-world.ts`      | Combines everything into the block world (below)                                                                                                                                                                                 |
 
 ### World building (`scripts/world/*`)
 
@@ -62,13 +62,13 @@ Everything geographic happens at build time. The browser only decompresses, mesh
 
 ### Shipped files (`public/world/`)
 
-| File | Content |
-| --- | --- |
-| `columns.bin` | gzip: per-column terrain height (row-delta u16), surface block (u8), structure bottom / top (u16), pick id (u16); zone grid (u8, 4 m) |
-| `structures.bin` | gzip: block quads — origin u16×3, size / direction / material u8×4, feature id u16 — grouped by chunk |
-| `trees.bin`, `props.bin` | gzip: 10-byte instance records |
-| `features.json` | Searchable / inspectable features |
-| `world.json` | Metadata, structure groups, zones, statistics |
+| File                     | Content                                                                                                                               |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
+| `columns.bin`            | gzip: per-column terrain height (row-delta u16), surface block (u8), structure bottom / top (u16), pick id (u16); zone grid (u8, 4 m) |
+| `structures.bin`         | gzip: block quads — origin u16×3, size / direction / material u8×4, feature id u16 — grouped by chunk                                 |
+| `trees.bin`, `props.bin` | gzip: 10-byte instance records                                                                                                        |
+| `features.json`          | Searchable / inspectable features                                                                                                     |
+| `world.json`             | Metadata, structure groups, zones, statistics                                                                                         |
 
 ## Rendering
 
@@ -105,9 +105,9 @@ sliding, and the minimum camera altitude.
 
 `CameraController` owns one rig shared by all modes ([`rig.ts`](../src/scene/rig.ts)):
 
-- *Isometric* (orthographic) and *Orbit* (perspective) share target / azimuth / polar / distance;
+- _Isometric_ (orthographic) and _Orbit_ (perspective) share target / azimuth / polar / distance;
   the orthographic zoom is derived from the same distance, so switching keeps the framing.
-- *Explore* has position / yaw / pitch, walk-run-fly speeds, jump, joystick input.
+- _Explore_ has position / yaw / pitch, walk-run-fly speeds, jump, joystick input.
 - Motion is delta-time based with exponential damping. Guided fly-to is a cancellable tween.
 - The pivot stays inside the modelled area; the perspective camera is lifted above terrain and roofs.
 - URL hash state: mode, pose, selection, layers, time, performance mode.

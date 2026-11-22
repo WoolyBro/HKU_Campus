@@ -132,6 +132,11 @@ function Accuracy() {
           as “Residential block, Hill Road” — that is a description, not a name.
         </li>
         <li>
+          <strong>Student guide.</strong> Building facts come with their source (Wikidata, the Antiquities and Monuments Office, OpenStreetMap); “nearby” distances are straight-line estimates; transit
+          stops and routes come from the Transport Department’s official GTFS feed. Walking tours follow mapped paths and are illustrative, not directions. Opening hours are as mapped and may be out
+          of date.
+        </li>
+        <li>
           <strong>Façades, windows, roofs, entrances, roof plant, lamps, benches and individual trees</strong> are procedural or hand-styled. Tier A landmarks were modelled against official
           photographs but remain interpretations. Tier C (context) buildings have a generic façade that is not specific to the building.
         </li>

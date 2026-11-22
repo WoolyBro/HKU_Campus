@@ -66,7 +66,18 @@ test('layer toggles and day/night switch update the scene state', async ({ page 
   await expect(page.getByText('Stylised / approximate')).toBeVisible()
   await page.getByRole('button', { name: 'night' }).click()
   await expect(page).toHaveURL(/t=night/)
-  await expect(page).toHaveURL(/l=1110111001/)
+  await expect(page).toHaveURL(/l=1110111101/)
+})
+
+test('the student guide starts a walking tour and steps through its stops', async ({ page }) => {
+  await enter(page)
+  await page.getByRole('button', { name: 'Student guide' }).click()
+  await page.getByRole('button', { name: 'Start tour' }).first().click()
+  await expect(page.getByText(/stop 1 of \d+/i)).toBeVisible()
+  await page.getByRole('button', { name: 'Next →' }).click()
+  await expect(page.getByText(/stop 2 of \d+/i)).toBeVisible()
+  // the inspector opens on the stop; buildings also show their guide block
+  await expect(page.getByRole('complementary', { name: 'Selected place' })).toBeVisible()
 })
 
 test('camera modes switch and reset returns to the campus overview', async ({ page }) => {

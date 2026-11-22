@@ -19,6 +19,9 @@ It is **not** a game world, mod, server or download, it needs no game installati
 
 ## What you can do
 
+- Open the **Student guide** (🎓) for walking tours of the HKU main campus: a route drawn along mapped paths, with a short note at each stop.
+- Click a building for its facts with sources, what is mapped inside it, the nearest station, stops (with routes), library and food, and accessibility as mapped.
+- See **guide places** as you zoom in (transit, food, cafés, libraries, safety, shops…); filter them under Layers and search "coffee", "study" or a route number.
 - Land on an orthographic three-quarter overview, then orbit, pan and zoom.
 - Switch between **Isometric** (orthographic), **Orbit** (perspective) and **Explore** (first-person
   walk / run / fly with terrain following and building collision), plus **Street level**.
@@ -46,22 +49,22 @@ Open the printed `http://localhost:5174`. The repository ships the generated wor
 
 ## Commands
 
-| Command | What it does |
-| --- | --- |
-| `npm run dev` | Development server (port 5174) |
-| `npm run build` | Type-check and produce the static production build in `dist/` |
-| `npm run preview` | Serve the production build locally (port 4174) |
-| `npm run typecheck` | TypeScript project check |
-| `npm run lint` | ESLint |
-| `npm run format` | Prettier |
-| `npm test` | Unit tests (Vitest): projection, landmark coordinates, height hierarchy, mesher, world data, search |
-| `npm run test:e2e` | Playwright end-to-end tests against the production build |
-| `npm run data:fetch` | Refresh spatial data: OSM extract, official HKU names, Lands Department buildings and terrain |
-| `npm run data:process` | Raw OSM → clean grouped GeoJSON in `data/processed/` |
-| `npm run data:terrain` | Crop and resample the terrain model to the campus grid |
-| `npm run data:world` | Build the block world into `public/world/` |
-| `npm run data:build` | `data:process` + `data:terrain` + `data:world` |
-| `npm run data:all` | `data:fetch` + `data:build` |
+| Command                | What it does                                                                                        |
+| ---------------------- | --------------------------------------------------------------------------------------------------- |
+| `npm run dev`          | Development server (port 5174)                                                                      |
+| `npm run build`        | Type-check and produce the static production build in `dist/`                                       |
+| `npm run preview`      | Serve the production build locally (port 4174)                                                      |
+| `npm run typecheck`    | TypeScript project check                                                                            |
+| `npm run lint`         | ESLint                                                                                              |
+| `npm run format`       | Prettier                                                                                            |
+| `npm test`             | Unit tests (Vitest): projection, landmark coordinates, height hierarchy, mesher, world data, search |
+| `npm run test:e2e`     | Playwright end-to-end tests against the production build                                            |
+| `npm run data:fetch`   | Refresh spatial data: OSM extract, official HKU names, Lands Department buildings and terrain       |
+| `npm run data:process` | Raw OSM → clean grouped GeoJSON in `data/processed/`                                                |
+| `npm run data:terrain` | Crop and resample the terrain model to the campus grid                                              |
+| `npm run data:world`   | Build the block world into `public/world/`                                                          |
+| `npm run data:build`   | `data:process` + `data:terrain` + `data:world`                                                      |
+| `npm run data:all`     | `data:fetch` + `data:build`                                                                         |
 
 First-time end-to-end setup: `npx playwright install chromium`.
 Documentation screenshots: `SHOTS=1 npx playwright test e2e/screenshots.spec.ts`.

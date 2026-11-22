@@ -1,6 +1,7 @@
 import { useWorld } from '../../app/hooks'
 import { LAYER_KEYS, LAYER_LABELS, useApp, type TimeOfDay } from '../../app/store'
 import { CONFIDENCE_STYLE } from '../../scene/CampusScene'
+import { POI_META, POI_ORDER } from '../guide/poi'
 
 const PATTERN_CSS: Record<string, string> = {
   solid: '',
@@ -14,6 +15,7 @@ export function LayersPanel() {
   const toggle = useApp((s) => s.toggleLayer)
   const time = useApp((s) => s.time)
   const perf = useApp((s) => s.perf)
+  const poiCats = useApp((s) => s.poiCats)
   const set = useApp((s) => s.set)
   const world = useWorld()
   return (
@@ -31,6 +33,22 @@ export function LayersPanel() {
           ))}
         </ul>
       </fieldset>
+      {layers.pois && (
+        <fieldset>
+          <legend className="mb-1 text-xs font-bold tracking-wide text-slate-600 uppercase">Guide places</legend>
+          <ul className="grid grid-cols-2 gap-0.5">
+            {POI_ORDER.map((c) => (
+              <li key={c}>
+                <label className="flex min-h-8 cursor-pointer items-center gap-2 px-1 text-sm hover:bg-white/70">
+                  <input type="checkbox" className="h-4 w-4" style={{ accentColor: POI_META[c].colour }} checked={poiCats[c]} onChange={() => set({ poiCats: { ...poiCats, [c]: !poiCats[c] } })} />
+                  <span aria-hidden="true">{POI_META[c].icon}</span> {POI_META[c].label}
+                </label>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-1 text-xs text-slate-600">Places appear as you zoom in: stations first, then libraries, stops, cafés and food.</p>
+        </fieldset>
+      )}
       {layers.confidence && (
         <div aria-label="Source-confidence legend">
           <p className="mb-1 text-xs font-bold tracking-wide text-slate-600 uppercase">Confidence legend</p>

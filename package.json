@@ -13,12 +13,13 @@
     "format": "prettier --write .",
     "test": "vitest run",
     "test:e2e": "playwright test",
-    "data:fetch": "tsx scripts/fetch-osm.ts && tsx scripts/fetch-official.ts && tsx scripts/fetch-landsd-buildings.ts && tsx scripts/fetch-terrain.ts",
+    "data:fetch": "tsx scripts/fetch-osm.ts && tsx scripts/fetch-official.ts && tsx scripts/fetch-landsd-buildings.ts && tsx scripts/fetch-terrain.ts && npm run data:guide",
     "data:process": "tsx scripts/process-osm.ts",
     "data:terrain": "tsx scripts/build-terrain.ts",
     "data:world": "tsx scripts/build-voxel-world.ts",
     "data:build": "npm run data:process && npm run data:terrain && npm run data:world",
-    "data:all": "npm run data:fetch && npm run data:build"
+    "data:all": "npm run data:fetch && npm run data:build",
+    "data:guide": "tsx scripts/fetch-osm-extra.ts && tsx scripts/fetch-transit.ts && tsx scripts/fetch-guide-facts.ts && tsx scripts/fetch-hk-monuments.ts"
   },
   "dependencies": {
     "@fontsource/pixelify-sans": "^5.3.0",

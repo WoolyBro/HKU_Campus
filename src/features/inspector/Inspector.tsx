@@ -3,6 +3,7 @@ import { useWorld } from '../../app/hooks'
 import { useApp } from '../../app/store'
 import { IconClose, IconFly, IconHome, IconWalk } from '../../components/icons'
 import type { FeatureRecord } from '../../lib/voxel/world-format'
+import { POI_META, walkMinutes } from '../guide/poi'
 
 const TIER: Record<string, [string, string]> = {
   A: ['Tier A · landmark model', 'Bespoke block model on the real footprint.'],
@@ -27,6 +28,7 @@ const NAME_SRC: Record<string, string> = {
   'official-location': 'Official HKU Campus Map (matched by location)',
   'official-point': 'Official HKU Campus Map',
   osm: 'OpenStreetMap',
+  'official-transit': 'Official transit schedule data (GTFS)',
   landsd: 'Lands Department building data (HKSAR Government)',
   'derived-street': 'Descriptive label from address / nearest street — not an official name',
   derived: 'Derived for this project',
@@ -40,6 +42,77 @@ function Row({ k, children }: { k: string; children: React.ReactNode }) {
       <dt className="text-slate-600">{k}</dt>
       <dd className="min-w-0 break-words">{children}</dd>
     </div>
+  )
+}
+
+/** Student-guide block: address, facts with sources, what is inside, what is near. */
+function GuideSection({ f }: { f: FeatureRecord }) {
+  const select = useApp((s) => s.select)
+  const world = useWorld()
+  const g = f.guide
+  const poi = f.kind === 'poi' && f.poi ? POI_META[f.poi] : null
+  if (!g && !poi) return null
+  return (
+    <section aria-label="Guide" className="mt-3 border-2 border-[var(--color-edge)] bg-white/80 p-2.5 text-sm">
+      {poi && (
+        <p className="mb-1 font-semibold">
+          <span aria-hidden="true">{poi.icon} </span>
+          {f.category}
+        </p>
+      )}
+      {poi && f.notes && <p className="text-xs text-slate-700">{f.poi === 'transit' ? `Routes: ${f.notes}` : f.notes}</p>}
+      {g?.address && <p className="text-xs text-slate-600">{g.address}</p>}
+      {g?.facts && (
+        <dl className="mt-1.5 space-y-1">
+          {g.facts.map((x, k) => (
+            <div key={k} className="grid grid-cols-[6.4rem_1fr] gap-2">
+              <dt className="text-slate-600">{x.label}</dt>
+              <dd className="min-w-0">
+                {x.value}
+                <span className="block text-[10.5px] text-slate-500">{x.source}</span>
+              </dd>
+            </div>
+          ))}
+        </dl>
+      )}
+      {g?.inside && (
+        <div className="mt-2">
+          <p className="text-xs font-semibold text-slate-600">Mapped inside</p>
+          <ul className="list-disc pl-4 text-xs">
+            {g.inside.map((x) => (
+              <li key={x}>{x}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+      {g?.nearby && (
+        <div className="mt-2">
+          <p className="text-xs font-semibold text-slate-600">Nearby on foot (approx.)</p>
+          <ul className="mt-0.5 space-y-0.5">
+            {g.nearby.map((n, k) => (
+              <li key={k}>
+                <button
+                  type="button"
+                  className="w-full text-left text-xs hover:underline"
+                  onClick={() => {
+                    const t = n.i ? world?.feature(n.i) : undefined
+                    if (t) {
+                      select(t.i)
+                      bus.emit({ type: 'flyTo', feature: t })
+                    }
+                  }}
+                >
+                  <span aria-hidden="true">{n.cat === 'transit' && !/station/i.test(n.name) ? '🚏' : POI_META[n.cat].icon} </span>
+                  <span className="font-semibold">{n.name}</span> · {walkMinutes(n.distM)} min ({n.distM} m)
+                  {n.detail && <span className="block truncate pl-5 text-[10.5px] text-slate-500">{n.detail}</span>}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      {g?.access && <p className="mt-2 text-xs text-slate-700">♿ {g.access}</p>}
+    </section>
   )
 }
 
@@ -78,6 +151,7 @@ export function Inspector() {
           {f.code && <span className="border border-slate-500 bg-white px-1.5 py-0.5">Map ref {f.code}</span>}
         </p>
       )}
+      <GuideSection f={f} />
       <dl className="mt-3">
         {zone && (
           <Row k="Campus zone">

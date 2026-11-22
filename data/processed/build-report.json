@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-10T15:56:20.161Z",
+ "generatedAt": "2026-11-22T08:00:02.131Z",
  "stats": {
   "buildings": 927,
   "tierA": 12,
@@ -10,7 +10,7 @@
   "geomVerified": 47,
   "geomInferred": 9,
   "geomApproximate": 871,
-  "features": 1117,
+  "features": 1711,
   "trees": 20526,
   "props": 2392,
   "structureQuads": 397587,

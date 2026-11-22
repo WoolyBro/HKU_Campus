@@ -30,3 +30,17 @@ test.describe('documentation screenshots', () => {
     })
   }
 })
+
+test('docs: student guide tour', async ({ page }) => {
+  test.skip(!process.env.SHOTS, 'set SHOTS=1 to regenerate docs/screenshots')
+  await page.goto('/')
+  const explore = page.getByRole('button', { name: 'Explore campus' })
+  await expect(explore).toBeEnabled({ timeout: 90_000 })
+  await explore.click()
+  await page.getByRole('button', { name: 'Student guide' }).click()
+  await page.getByRole('button', { name: 'Start tour' }).first().click()
+  await page.getByRole('button', { name: 'Next →' }).click()
+  await page.getByRole('button', { name: 'Next →' }).click()
+  await page.waitForTimeout(7000)
+  await page.screenshot({ path: 'docs/screenshots/guide-tour.png' })
+})
